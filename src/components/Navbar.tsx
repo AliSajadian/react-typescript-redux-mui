@@ -1,61 +1,62 @@
-import React, { FC, ReactElement } from "react";
+import { FC, ReactElement } from "react";
 import {
-  Box,
-  Link,
+  // Box,
   Container,
   IconButton,
-  Menu,
-  MenuItem,
+  // Link,
+  // Menu,
+  // MenuItem,
   Toolbar,
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { routes } from "../routes/routes";
-import { NavLink } from "react-router-dom";
+import { useProSidebar } from "react-pro-sidebar";
+import { useSidebar } from "../hooks/useSidebar";
+// import { routes } from "../routes";
+// import { NavLink } from "react-router-dom";
+
 
 const Navbar: FC = (): ReactElement => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const { broken } = useProSidebar();
+  const { toggle } = useSidebar();
 
-  const handleOpenNavMenu = (event: any) => {
-    setAnchorElNav(event.currentTarget);
-  };
+  // const [anchorElNav, setAnchorElNav] = React.useState(null);
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+  // const handleOpenNavMenu = (event: any) => {
+  //   setAnchorElNav(event.currentTarget);
+  // };
 
+  // const handleCloseNavMenu = () => {
+  //   setAnchorElNav(null);
+  // };
   return (
-    <Box
-      sx={{
-        width: "100%",
-        height: "auto",
-        backgroundColor: "secondary.main",
-      }}
-    >
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
+      <Container maxWidth="xl" sx={{pl: 0}}>
+        <Toolbar disableGutters sx={{pl: 0, ml: 0}}>
           <Typography
             variant="h6"
+            color={"#8ba1b7"}
             noWrap
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
             }}
           >
-            Starter App
+            Nav Bar
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
+          {/* display: { xs: "flex" }, , sm: "none", md: "none", lg:"none", xl:"none" 
+          <Box sx={{ flexGrow: 1, textAlign: "left", pl: -10}}>*/}
+            {broken && (<IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={handleOpenNavMenu}
+              onClick={toggle}
               color="inherit"
+              margin-left="0"
             >
               <MenuIcon />
-            </IconButton>
-            <Menu
+            </IconButton>)}
+            {/* <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
@@ -68,7 +69,7 @@ const Navbar: FC = (): ReactElement => {
                 horizontal: "left",
               }}
               open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
+              onClose={toggle}
               sx={{
                 display: { xs: "block", md: "none" },
               }}
@@ -82,23 +83,23 @@ const Navbar: FC = (): ReactElement => {
                   underline="none"
                   variant="button"
                 >
-                  <MenuItem onClick={handleCloseNavMenu}>
+                  <MenuItem onClick={toggle}>
                     <Typography textAlign="center">{page.title}</Typography>
                   </MenuItem>
                 </Link>
               ))}
-            </Menu>
-          </Box>
-          <Typography
+            </Menu> 
+          </Box>*/}
+          {/* <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
-            React Starter App
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Box
+            Nav Bar
+          </Typography> */}
+          {/*<Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+             <Box
               sx={{
                 display: "flex",
                 flexDirection: "row",
@@ -120,11 +121,10 @@ const Navbar: FC = (): ReactElement => {
                   {page.title}
                 </Link>
               ))}
-            </Box>
-          </Box>
+            </Box> 
+          </Box>*/}
         </Toolbar>
       </Container>
-    </Box>
   );
 };
 

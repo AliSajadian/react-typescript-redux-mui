@@ -1,4 +1,4 @@
-import React, { FC, ReactElement } from "react";
+import { FC, ReactElement } from "react";
 import { Box, Container, Grid, Typography } from "@mui/material";
 
 export const Footer: FC = (): ReactElement => {
@@ -6,22 +6,16 @@ export const Footer: FC = (): ReactElement => {
     <Box
       sx={{
         width: "100%",
-        height: "auto",
-        backgroundColor: "secondary.main",
-        paddingTop: "1rem",
-        paddingBottom: "1rem",
+        height: "%8",
+        backgroundColor: "rgb(0, 32, 63, 0.8)",
+        // backgroundColor: "rgb(26, 120, 109, 0.6)",
       }}
     >
       <Container maxWidth="lg">
         <Grid container direction="column" alignItems="center">
           <Grid item xs={12}>
-            <Typography color="black" variant="h5">
-              React Starter App
-            </Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <Typography color="textSecondary" variant="subtitle1">
-              {`${new Date().getFullYear()} | React | Material UI | React Router`}
+            <Typography color={"#8ba1b7"} variant="subtitle2">
+              {`${new Date().getFullYear()} | React | Typescript | Material UI | React Redux`}
             </Typography>
           </Grid>
         </Grid>

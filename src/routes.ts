@@ -1,7 +1,7 @@
 // pages
-import Home from "../pages/Home";
-import About from "../pages/About";
-import Products from "../pages/Products";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Products from "./pages/Products";
 
 // other
 import {FC} from "react";
