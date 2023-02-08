@@ -1,7 +1,7 @@
 import { ReactElement, FC } from "react";
 import { Box, Typography } from "@mui/material";
 
-const Products: FC<any> = (): ReactElement => {
+const JobPosition: FC<any> = (): ReactElement => {
   return (
     <Box
       sx={{
@@ -12,9 +12,9 @@ const Products: FC<any> = (): ReactElement => {
         alignItems: "center",
       }}
     >
-      <Typography variant="h3">Products</Typography>
+      <Typography variant="h3">JobPosition</Typography>
     </Box>
   );
 };
 
-export default Products;
+export default JobPosition;

@@ -65,25 +65,24 @@ const SideBar: FC = (): ReactElement => {
         <Menu menuItemStyles={menuItemStyles}>
           <MenuItem icon={<HomeOutlinedIcon />} onClick={()=>navigate('/', { replace: true})}>Home</MenuItem>
           <SubMenu icon={<Info />} label="BaseInfo">
-            <MenuItem>Company</MenuItem>
-            <MenuItem>Department</MenuItem>
-            <MenuItem>Employee</MenuItem>
-            <MenuItem>JobPosition</MenuItem>
-            <MenuItem>Project</MenuItem>
+            <MenuItem onClick={()=>navigate('baseinfo/company', { replace: true})}>Company</MenuItem>
+            <MenuItem onClick={()=>navigate('baseinfo/department', { replace: true})}>Department</MenuItem>
+            <MenuItem onClick={()=>navigate('baseinfo/employee', { replace: true})}>Employee</MenuItem>
+            <MenuItem onClick={()=>navigate('baseinfo/jobPosition', { replace: true})}>JobPosition</MenuItem>
+            <MenuItem onClick={()=>navigate('baseinfo/project', { replace: true})}>Project</MenuItem>
           </SubMenu>
           <SubMenu icon={<Restaurant />} label="Restaurant">
-            <MenuItem icon={<Restaurant />} onClick={()=>navigate('/about', { replace: true})}>Meal</MenuItem>
-            <MenuItem >Monthly Meals</MenuItem>
-            <MenuItem >Select Current Month Meals</MenuItem>
-            <MenuItem >Select Next Month Meals</MenuItem>  
+            <MenuItem icon={<Restaurant />} onClick={()=>navigate('restaurant/meal', { replace: true})}>Meal</MenuItem>
+            <MenuItem onClick={()=>navigate('restaurant/mealssettingmonthly', { replace: true})}>Monthly Meals</MenuItem>
+            <MenuItem onClick={()=>navigate('restaurant/mealsselectioncurrentmonth', { replace: true})}>Select Current Month Meals</MenuItem>
+            <MenuItem onClick={()=>navigate('restaurant/mealsselectionnextmonth', { replace: true})}>Select Next Month Meals</MenuItem>  
           </SubMenu>
           <SubMenu icon={<Security />} label="Security">
-            <MenuItem >Users</MenuItem>
-            <MenuItem > User Groups</MenuItem>
-            <MenuItem >Permissions</MenuItem>
-            <MenuItem >User Permission</MenuItem>  
-            <MenuItem >User Group Permissions</MenuItem>
-            <MenuItem >User and User Group</MenuItem> 
+            <MenuItem onClick={()=>navigate('security/user', { replace: true})}>Users</MenuItem>
+            <MenuItem onClick={()=>navigate('security/group', { replace: true})}> Groups</MenuItem>
+            <MenuItem onClick={()=>navigate('security/permission', { replace: true})}>Permissions</MenuItem>
+            <MenuItem onClick={()=>navigate('security/grouppermission', { replace: true})}>Group Permissions</MenuItem>
+            <MenuItem onClick={()=>navigate('security/usergroup', { replace: true})}>User and Group</MenuItem> 
           </SubMenu>
    
           <Box sx={{ py: '0', px:'24px', mb: '8px', mt: '32px' }}>
