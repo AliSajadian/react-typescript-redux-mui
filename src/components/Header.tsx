@@ -10,8 +10,8 @@ export const Header: FC = (): ReactElement => {
       sx={{
         width: "100%",
         height: mnuHeaderHeight,
-        backgroundColor: "rgb(0, 32, 63, 0.8)",
-        shadowBox: 8,
+        backgroundColor: "rgb(0, 32, 63, 0.9)",
+        boxShadow: 10,
       }}
       // 26, 120, 109
     >

@@ -5,9 +5,9 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import Info from "@mui/icons-material/InfoOutlined";
 import Restaurant from "@mui/icons-material/RestaurantMenuOutlined";
 import Security from "@mui/icons-material/SecurityOutlined";
-import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
-import BookIcon from "@mui/icons-material/Book";
-import RoomServiceIcon from "@mui/icons-material/RoomService";
+import FoodBank from "@mui/icons-material/FoodBankOutlined";
+import Search from "@mui/icons-material/SearchOutlined";
+import Recommend from "@mui/icons-material/RecommendOutlined";
 import { Typography } from "@mui/material";
 import { SidebarFooter } from "./SidebarFooter";
 import { Badge } from "./Badge";
@@ -48,7 +48,7 @@ const SideBar: FC = (): ReactElement => {
           }}
         >
           {" "}
-          <Typography sx={{textAlign: "center", fontWeight: "bold", my: "0.5rem"}} variant="h4">Admin</Typography>
+          <Typography sx={{textAlign: "center", fontWeight: "bold", my: "1rem"}} variant="h5">Restaurant</Typography>
         </MenuItem>
       </Menu>
             {/* <div style={{ flex: 1, marginBottom: '32px' }}> style={{ marginBottom: '24px', marginTop: '16px' }}*/}
@@ -72,7 +72,7 @@ const SideBar: FC = (): ReactElement => {
             <MenuItem onClick={()=>navigate('baseinfo/project', { replace: true})}>Project</MenuItem>
           </SubMenu>
           <SubMenu icon={<Restaurant />} label="Restaurant">
-            <MenuItem icon={<Restaurant />} onClick={()=>navigate('restaurant/meal', { replace: true})}>Meal</MenuItem>
+            <MenuItem onClick={()=>navigate('restaurant/meal', { replace: true})}>Meal</MenuItem>
             <MenuItem onClick={()=>navigate('restaurant/mealssettingmonthly', { replace: true})}>Monthly Meals</MenuItem>
             <MenuItem onClick={()=>navigate('restaurant/mealsselectioncurrentmonth', { replace: true})}>Select Current Month Meals</MenuItem>
             <MenuItem onClick={()=>navigate('restaurant/mealsselectionnextmonth', { replace: true})}>Select Next Month Meals</MenuItem>  
@@ -96,15 +96,15 @@ const SideBar: FC = (): ReactElement => {
             </Box>
 
             <Menu menuItemStyles={menuItemStyles}>
-              <MenuItem icon={<CalendarTodayOutlinedIcon />} suffix={<Badge variant="success">New</Badge>}>
-                Calendar
+              <MenuItem icon={<FoodBank />} suffix={<Badge variant="success">New</Badge>}>
+                New Courses
               </MenuItem>
-              <SubMenu icon={<BookIcon />} label="Documentation">
-                <MenuItem>Documentation1</MenuItem>
-                <MenuItem>Documentation2</MenuItem>
-                <MenuItem>Documentation3</MenuItem>
+              <SubMenu icon={<Search />} label="User Survey">
+                <MenuItem>January</MenuItem>
+                <MenuItem>February</MenuItem>
+                <MenuItem>March</MenuItem>
               </SubMenu>
-              <MenuItem disabled icon={<RoomServiceIcon />}>
+              <MenuItem disabled icon={<Recommend />}>
                 Examples
               </MenuItem>
             </Menu>
