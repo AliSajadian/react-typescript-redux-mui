@@ -21,7 +21,7 @@ const StyledButton = styled.a`
 `;
 
 const StyledSidebarFooter = styled.div`
-  width: 50%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,7 +48,7 @@ const StyledCollapsedSidebarFooter = styled.a`
 `;
 
 const codeUrl =
-  'https://github.com/azouaoui-med/react-pro-sidebar/blob/master/storybook/Playground.tsx';
+  'https://github.com/AliSajadian/react-typescript-redux-mui/blob/master/src/components/Sidebar.tsx';
 
 export const SidebarFooter: React.FC<SidebarFooterProps> = ({ children, collapsed, ...rest }) => {
   return (
@@ -57,7 +57,7 @@ export const SidebarFooter: React.FC<SidebarFooterProps> = ({ children, collapse
         display: 'flex',
         justifyContent: 'center',
         paddingBottom: '20px',
-        marginTop: '12px',
+        marginTop: '32px',
       }}
     >
       {collapsed ? (
@@ -69,7 +69,7 @@ export const SidebarFooter: React.FC<SidebarFooterProps> = ({ children, collapse
           <div style={{ marginBottom: '12px' }}>
             <Github size={30} />
           </div>
-          <Typography fontWeight={600}>Pro Sidebar</Typography>
+          <Typography fontWeight={600}>Pro Template</Typography>
           <Typography variant="caption" style={{ letterSpacing: 1, opacity: 0.7 }}>
             V {packageJson.version}
           </Typography>
