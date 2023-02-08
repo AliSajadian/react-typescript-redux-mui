@@ -1,17 +1,18 @@
 import { FC, ReactElement } from "react";
-import { Box, Container, Grid } from "@mui/material";
+import { Container, Grid } from "@mui/material";
+import { Box } from "@mui/system";
 import Navbar from "./Navbar";
 
 
 export const Header: FC = (): ReactElement => {
-  var mnuHeaderHeight = document.getElementById("sidebarMnuHeader")?.offsetHeight
+  var mnuHeaderHeight = document.getElementById("sidebarMnuHeader")?.clientHeight
   return (
     <Box
       sx={{
         width: "100%",
         height: mnuHeaderHeight,
         backgroundColor: "rgb(0, 32, 63, 0.9)",
-        boxShadow: 10,
+        boxShadow:15,
       }}
       // 26, 120, 109
     >

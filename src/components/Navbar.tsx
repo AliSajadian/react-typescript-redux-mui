@@ -30,8 +30,8 @@ const Navbar: FC = (): ReactElement => {
   //   setAnchorElNav(null);
   // };
   return (
-      <Container maxWidth="xl" sx={{pl: 0}}>
-        <Toolbar disableGutters sx={{pl: 0, ml: 0}}>
+      <Container maxWidth="xl">
+        <Toolbar disableGutters >
           <Typography
             variant="h6"
             color={"#8ba1b7"}
@@ -45,14 +45,10 @@ const Navbar: FC = (): ReactElement => {
           </Typography>
           {/* display: { xs: "flex" }, , sm: "none", md: "none", lg:"none", xl:"none" 
           <Box sx={{ flexGrow: 1, textAlign: "left", pl: -10}}>*/}
-            {broken && (<IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
+            {broken && (
+            <IconButton
               onClick={toggle}
-              color="inherit"
-              margin-left="0"
+              sx={{color:"#8ba1b7", mt:"8px"}}
             >
               <MenuIcon />
             </IconButton>)}

@@ -57,6 +57,7 @@ export const SidebarFooter: React.FC<SidebarFooterProps> = ({ children, collapse
         display: 'flex',
         justifyContent: 'center',
         paddingBottom: '20px',
+        marginTop: '12px',
       }}
     >
       {collapsed ? (

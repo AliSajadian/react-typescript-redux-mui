@@ -1,5 +1,5 @@
 import { FC, ReactElement, ReactNode } from "react";
-import { Box } from "@mui/material";
+import { Box, Card } from "@mui/material";
 
 interface ContentProps {
     children: ReactNode;
@@ -15,9 +15,25 @@ export const Content: FC<ContentProps> = ({ children }): ReactElement => {
             minHeight: "100vh",
             maxWidth: "100vw",
             flexGrow: 1,
+            backgroundColor: '#dcecfc'
         }}
     >
-      {children}
+      <Card
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-start#",
+          mt:'0',
+          mb:'1.5rem', 
+          mx:'auto', 
+          height:'100%', 
+          width:'80%', 
+          boxShadow:15,
+          backgroundColor:'#e8f1fc',
+        }}
+      >
+        {children}
+      </Card>
     </Box>
   )
 }
