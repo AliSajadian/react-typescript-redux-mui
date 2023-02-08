@@ -1,7 +1,7 @@
 import React from "react";
 import { useProSidebar } from "react-pro-sidebar";
 import { menuClasses } from '../utils/utilityClasses';
-import { MenuItemStyles } from "../types/SidebarTypes";
+import { MenuItemStyles } from "../interfaces/SidebarTypes";
 import { Theme, themes } from "../styles/SidebarStyle";
 
 export const useSidebar = () => {

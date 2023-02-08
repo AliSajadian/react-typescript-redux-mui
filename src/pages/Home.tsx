@@ -1,4 +1,4 @@
-import React, { ReactElement, FC } from "react";
+import { ReactElement, FC } from "react";
 import { Box, Typography } from "@mui/material";
 
 const Home: FC<any> = (): ReactElement => {

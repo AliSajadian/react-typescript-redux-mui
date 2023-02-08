@@ -4,13 +4,14 @@ import Navbar from "./Navbar";
 
 
 export const Header: FC = (): ReactElement => {
-  var mnuHeaderHeight = document.getElementById("sidebarMnuHeader")?.clientHeight
+  var mnuHeaderHeight = document.getElementById("sidebarMnuHeader")?.offsetHeight
   return (
     <Box
       sx={{
         width: "100%",
         height: mnuHeaderHeight,
         backgroundColor: "rgb(0, 32, 63, 0.8)",
+        shadowBox: 8,
       }}
       // 26, 120, 109
     >

@@ -2,11 +2,10 @@ import { FC, ReactElement } from "react";
 import { Sidebar, Menu, MenuItem, SubMenu, useProSidebar } from "react-pro-sidebar";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
-import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
-import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
+import Info from "@mui/icons-material/InfoOutlined";
+import Restaurant from "@mui/icons-material/RestaurantMenuOutlined";
+import Security from "@mui/icons-material/SecurityOutlined";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
-import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import BookIcon from "@mui/icons-material/Book";
 import RoomServiceIcon from "@mui/icons-material/RoomService";
 import { Typography } from "@mui/material";
@@ -15,16 +14,18 @@ import { Badge } from "./Badge";
 import { Box } from "@mui/system";
 import { themes } from "../styles/SidebarStyle";
 import { hexToRgba, useSidebar } from "../hooks/useSidebar";
+import { useNavigate } from 'react-router-dom';
 
 
 const SideBar: FC = (): ReactElement => {
+  const navigate = useNavigate();
   const { collapsed } = useProSidebar();
   const { toggle,
     menuItemStyles,
     theme,
     hasImage
    } = useSidebar();
-
+      
   return(
       <Sidebar 
         rtl={false} 
@@ -60,18 +61,31 @@ const SideBar: FC = (): ReactElement => {
                 General
               </Typography>
             </Box>
-        
+        {/* component="Link" href="/" */}
         <Menu menuItemStyles={menuItemStyles}>
-          <MenuItem icon={<HomeOutlinedIcon />}>Home</MenuItem>
-          <SubMenu icon={<PeopleOutlinedIcon />} label="Team">
-            <MenuItem>Team1</MenuItem>
-            <MenuItem>Team2</MenuItem>
-            <MenuItem>Team3</MenuItem>
+          <MenuItem icon={<HomeOutlinedIcon />} onClick={()=>navigate('/', { replace: true})}>Home</MenuItem>
+          <SubMenu icon={<Info />} label="BaseInfo">
+            <MenuItem>Company</MenuItem>
+            <MenuItem>Department</MenuItem>
+            <MenuItem>Employee</MenuItem>
+            <MenuItem>JobPosition</MenuItem>
+            <MenuItem>Project</MenuItem>
           </SubMenu>
-          <MenuItem icon={<ContactsOutlinedIcon />}>Contacts</MenuItem>
-          <MenuItem icon={<ReceiptOutlinedIcon />}>Profile</MenuItem>
-          <MenuItem icon={<HelpOutlineOutlinedIcon />}>FAQ</MenuItem>
-          <MenuItem icon={<CalendarTodayOutlinedIcon />}>Calendar</MenuItem>     
+          <SubMenu icon={<Restaurant />} label="Restaurant">
+            <MenuItem icon={<Restaurant />} onClick={()=>navigate('/about', { replace: true})}>Meal</MenuItem>
+            <MenuItem >Monthly Meals</MenuItem>
+            <MenuItem >Select Current Month Meals</MenuItem>
+            <MenuItem >Select Next Month Meals</MenuItem>  
+          </SubMenu>
+          <SubMenu icon={<Security />} label="Security">
+            <MenuItem >Users</MenuItem>
+            <MenuItem > User Groups</MenuItem>
+            <MenuItem >Permissions</MenuItem>
+            <MenuItem >User Permission</MenuItem>  
+            <MenuItem >User Group Permissions</MenuItem>
+            <MenuItem >User and User Group</MenuItem> 
+          </SubMenu>
+   
           <Box sx={{ py: '0', px:'24px', mb: '8px', mt: '32px' }}>
               <Typography
                 variant="body2"
@@ -95,7 +109,6 @@ const SideBar: FC = (): ReactElement => {
                 Examples
               </MenuItem>
             </Menu>
-     
         </Menu>
         <SidebarFooter/>
       </Sidebar>

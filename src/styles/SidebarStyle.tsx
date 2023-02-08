@@ -35,4 +35,14 @@ export const themes = {
       },
     },
   },
+  // navbar: {
+  //   :link: {
+
+  //   },
+  //   :visited: {
+
+  //   },
+  //   textDecoration: "none",
+  //   color: "inherit",
+  // },
 };
