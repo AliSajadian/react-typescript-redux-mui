@@ -27,10 +27,10 @@ const Dashboard: FC = (): ReactElement => {
           <Item sx={{height: 200,}}>xs2</Item>
         </Grid>
         <Grid item xs={8} sm={6} md={4} lg={4}>
-          <Item sx={{height: 150,}}>xs3</Item>
+          <Item sx={{height: 100,}}>xs3</Item>
         </Grid>
         <Grid item xs={12} sm={12} md={8} lg={8}>
-          <Item sx={{height: 150,}}>xs4</Item>
+          <Item sx={{height: 100,}}>xs4</Item>
         </Grid>
       </Grid>
     </Box>
