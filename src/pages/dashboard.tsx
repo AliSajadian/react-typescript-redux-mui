@@ -17,7 +17,7 @@ const Dashboard: FC = (): ReactElement => {
     // columns={{ xs: 3, sm: 6, md: 9, lg: 12 }}
     <Box sx={{ flexGrow: 1, border: 1, p: 2}} >
       <Grid container spacing={2}>
-      <Grid item xs={12} sm={12} md={12} lg={12}  >
+      <Grid item xs={12} sm={12} md={12} lg={12} >
           <Item sx={{height: 100,}}>xs0</Item>
         </Grid>
         <Grid item xs={12} sm={12} md={8} lg={8}>

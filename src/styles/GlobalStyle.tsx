@@ -8,7 +8,7 @@ export const theme = createTheme({
             scrollbarColor: "#6b6b6b #2b2b2b",
             "&::-webkit-scrollbar, & *::-webkit-scrollbar": {
               backgroundColor: "rgb(144, 142, 142)",//,"#2b2b2b",
-              width: '0.6em'
+              width: '0.8em'
             },
             "&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb": {
               borderRadius: 8,
