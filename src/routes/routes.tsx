@@ -2,7 +2,7 @@ import async from "../components/Async";
 import { IRoute } from "../interfaces/RouteType";
 
 
-const Home = async(() => import("../pages/Home"));
+const Home = async(() => import("../pages/Dashboard"));
 const About = async(() => import("../pages/About"));
 const Company = async(() => import("../pages/baseInfo/company"));
 const Department = async(() => import("../pages/baseInfo/department"));
