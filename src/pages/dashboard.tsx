@@ -46,13 +46,13 @@ const Dashboard: FC = (): ReactElement => {
           <MediaCard title={'meal4'} description={'best dishes of restaurant'} imgUrl={meal4}/>
         </Grid>
         <Grid item xs={12} sm={12} md={8} lg={8}>
-          <Item sx={{height: 250,  }}>
+          <Item sx={{height: 300,  }}>
             <LineChart />
           </Item>
         </Grid>
         <Grid item xs={8} sm={6} md={4} lg={4}>
 
-          <Item sx={{height: 250,  }}/>
+          <Item sx={{height: 300,  }}/>
         </Grid>
         <Grid item xs={8} sm={6} md={4} lg={4}>
           <Item sx={{height: 150,  }}/>
