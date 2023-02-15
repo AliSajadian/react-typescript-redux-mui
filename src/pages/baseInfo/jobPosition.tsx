@@ -1,7 +1,8 @@
 import { ReactElement, FC } from "react";
 import { Box, Typography } from "@mui/material";
 
-const JobPosition: FC<any> = (): ReactElement => {
+
+const JobPosition: FC = (): ReactElement => {
   return (
     <Box
       sx={{

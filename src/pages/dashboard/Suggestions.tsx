@@ -1,6 +1,5 @@
 import { FC, ReactElement } from "react";
-import { Badge, Box, Card,  Divider, FormControlLabel, Radio, Typography } from "@mui/material";
-import Mail from "@mui/icons-material/MailOutline";
+import { Box, Card, Typography } from "@mui/material";
 import Suggestion from "./Suggestion";
 import RadioGroup from "@mui/material/RadioGroup";
 
@@ -50,7 +49,6 @@ const Suggestions: FC = (): ReactElement => {
                 <Suggestion label='Great' mailNo={100} color='secondary'/>
                 <Suggestion label='Qualified' mailNo={1000} color='success'/>
                 <Suggestion label='Not Qualified' mailNo={100} color='secondary'/>
-                <Divider/>
             </RadioGroup>
         </Card>
     )

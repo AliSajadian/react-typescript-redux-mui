@@ -3,16 +3,15 @@ import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import MediaCard from './dashboard/MediaCard';
-import meal1 from '../assets/meal1.jpg'
-import meal2 from '../assets/meal2.jpg'
-import meal3 from '../assets/meal4.jpg'
-import meal4 from '../assets/meal5.jpg'
-import LineChart from './dashboard/LineChart';
-import MealOrder from './dashboard/MealOrderStatistic';
-import MealOrderStatistics from './dashboard/MealOrderStatistics';
-import FavoriteMeals from './dashboard/FavoriteMeals';
-import Suggestions from './dashboard/Suggestions';
+import MediaCard from './MediaCard';
+import meal1 from '../../assets/meal1.jpg'
+import meal2 from '../../assets/meal2.jpg'
+import meal3 from '../../assets/meal4.jpg'
+import meal4 from '../../assets/meal5.jpg'
+import LineChart from './LineChart';
+import MealOrderStatistics from './MealOrderStatistics';
+import FavoriteMeals from './FavoriteMeals';
+import Suggestions from './Suggestions';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode !== 'dark' ? 'whitesmoke' : '#fff',

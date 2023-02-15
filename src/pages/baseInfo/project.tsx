@@ -1,7 +1,8 @@
 import { ReactElement, FC } from "react";
 import { Box, Typography } from "@mui/material";
 
-const Project: FC<any> = (): ReactElement => {
+
+const Project: FC = (): ReactElement => {
   return (
     <Box
       sx={{

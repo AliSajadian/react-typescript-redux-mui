@@ -1,5 +1,5 @@
 import { FC, ReactElement } from "react";
-import { Box, Card, CardContent, Typography, Divider } from "@mui/material";
+import { Box, Card, CardContent, Typography } from "@mui/material";
 import FavoriteMeal from "./FavoriteMeal";
 
 
