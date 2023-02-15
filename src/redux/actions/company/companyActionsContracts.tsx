@@ -1,5 +1,5 @@
-import { CompanyActionTypes } from '../constants';
-import { ICompany as Company } from '../../models/company';
+import { CompanyActionTypes } from '../../constants';
+import { ICompany as Company } from '../../../models/company';
 
 
 export interface IFetchCompanies {

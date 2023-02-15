@@ -21,3 +21,8 @@ export enum AuthActionTypes {
     AUTH_SUCCESS = 'AUTH_SUCCESS',
     AUTH_FAIL = 'AUTH_FAIL',
 }
+
+export enum AlertActionTypes {
+    OPEN_ALERT_MODAL = 'OPEN_ALERT_MODAL',
+    TOGGLE_ALERT_MODAL = 'TOGGLE_ALERT_MODAL',
+}

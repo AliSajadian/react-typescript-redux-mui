@@ -1,8 +1,9 @@
+// import { Dashboard } from "@mui/icons-material";
 import async from "../components/Async";
 import { IRoute } from "../interfaces/RouteType";
 
 
-const Home = async(() => import("../pages/dashboard/Dashboard"));
+const Dashboard = async(() => import("../pages/dashboard/Dashboard"));
 const About = async(() => import("../pages/About"));
 const Company = async(() => import("../pages/baseInfo/company"));
 const Department = async(() => import("../pages/baseInfo/department"));
@@ -15,9 +16,12 @@ const MealsSetting_Monthly = async(() => import("../pages/restaurant/admin/meals
 const MealsSelection_CurrentMonth = async(() => import("../pages/restaurant/users/mealsSelection_CurrentMonth"));
 const MealsSelection_NextMonth = async(() => import("../pages/restaurant/users/mealsSelection_NextMonth"));
 
-const Login = async(() => import("../pages/security/authentication/login"))
+const SignIn = async(() => import("../pages/security/authentication/signIn"))
+const SignUp = async(() => import("../pages/security/authentication/signUp"))
 const ChangePassword = async(() => import("../pages/security/authentication/changePassword"))
 const ForgetPassword = async(() => import("../pages/security/authentication/forgetPassword"))
+const Page404 = async(() => import("../pages/security/authentication/Page404"))
+
 
 const Group = async(() => import("../pages/security/authorization/group"));
 const GroupPermission = async(() => import("../pages/security/authorization/groupPermission"));
@@ -28,11 +32,11 @@ const UserGroup = async(() => import("../pages/security/authorization/userGroup"
 
 export const routes: Array<IRoute> = [
     {
-        key: 'home-route',
-        title: 'Home',
+        key: 'dashboard-route',
+        title: 'Dashboard',
         path: '/',
         enabled: true,
-        component: Home
+        component: Dashboard
     },
     {
         key: 'about-route',
@@ -108,26 +112,19 @@ export const routes: Array<IRoute> = [
     },
     //-------------Security Authentication-------------
     {
-        key: 'login-route',
-        title: 'Login',
-        path: 'auth/login',
+        key: 'changepassword-route',
+        title: 'page404',
+        path: 'auth/page404',
         enabled: true,
-        component: Login
+        component: Page404
     },
     {
-        key: 'changepassword-route',
-        title: 'ChangePassword',
-        path: 'auth/changepassword',
+        key: 'page404-route',
+        title: 'Page404',
+        path: '',
         enabled: true,
         component: ChangePassword
     },    
-    {
-        key: 'forgetpassword-route',
-        title: 'ForgetPassword',
-        path: 'auth/forgetpassword',
-        enabled: true,
-        component: ForgetPassword
-    },
     //-------------Security Authorization-------------
     {
         key: 'group-route',
@@ -164,4 +161,43 @@ export const routes: Array<IRoute> = [
         enabled: true,
         component: UserGroup
     },
+]
+
+export const authRoutes: Array<IRoute> = [
+   //-------------Security Authentication-------------
+//    {
+//         key: 'dashboard-route',
+//         title: 'Dashboard',
+//         path: '/',
+//         enabled: true,
+//         component: Dashboard
+//     },
+    {
+        key: 'signin-route',
+        title: 'SignIn',
+        path: '/',
+        enabled: true,
+        component: SignIn
+    },
+    {
+        key: 'signup-route',
+        title: 'SignUp',
+        path: 'auth/signup',
+        enabled: true,
+        component: SignUp
+    },
+    {
+        key: 'forgetpassword-route',
+        title: 'ForgetPassword',
+        path: 'auth/forgetpassword',
+        enabled: true,
+        component: ForgetPassword
+    },
+    {
+        key: 'page404-route',
+        title: 'Page404',
+        path: '',
+        enabled: true,
+        component: Page404
+    },    
 ]

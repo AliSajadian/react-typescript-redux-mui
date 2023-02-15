@@ -1,10 +1,10 @@
 import { Dispatch } from 'redux';
 import { AxiosResponse } from 'axios';
-import axios from '../../services/axios';
-import History from '../../history';
-import { IAuth as Auth } from '../../models/auth';
-import { AuthActionTypes } from '../constants';
-import { ThunkResult } from './actionTypes';
+import axios from '../../../services/axios';
+import History from '../../../history';
+import { IAuth as Auth } from '../../../models/auth';
+import { AuthActionTypes } from '../../constants';
+import { ThunkResult } from '../actionTypes';
 import { IAuthFail, IAuthStart, IAuthSuccess } from './authActionsContracts';
 
 // Headers

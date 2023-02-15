@@ -2,7 +2,7 @@ import { ReactElement, FC } from "react";
 import { Box, Typography } from "@mui/material";
 
 
-const Login: FC = (): ReactElement => {
+const SignUp: FC = (): ReactElement => {
   return (
     <Box
       sx={{
@@ -13,9 +13,9 @@ const Login: FC = (): ReactElement => {
         alignItems: "center",
       }}
     >
-      <Typography variant="h3">Login</Typography>
+      <Typography variant="h3">Sign Up</Typography>
     </Box>
   );
 };
 
-export default Login;
+export default SignUp;

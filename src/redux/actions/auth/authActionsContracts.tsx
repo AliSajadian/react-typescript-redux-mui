@@ -1,5 +1,5 @@
-import { AuthActionTypes } from '../constants';
-import { IAuth as Auth } from '../../models/auth';
+import { AuthActionTypes } from '../../constants';
+import { IAuth as Auth } from '../../../models/auth';
 
 
 export interface IAuthStart {

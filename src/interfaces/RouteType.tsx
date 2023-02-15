@@ -6,4 +6,5 @@ export interface IRoute {
     path: string,
     enabled: boolean,
     component: ComponentClass | FC
+    children?: IRoute | undefined;
 }

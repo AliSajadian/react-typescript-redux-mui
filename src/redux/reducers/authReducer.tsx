@@ -1,6 +1,6 @@
-import { AuthActions } from '../actions/authActions';
-import { AuthActionTypes } from '../constants';
 import { Reducer } from 'redux';
+import { AuthActions } from '../actions/auth/authActions';
+import { AuthActionTypes } from '../constants';
 import { IAuth as Auth } from '../../models/auth';
 import { IUser } from '../../models/user';
 

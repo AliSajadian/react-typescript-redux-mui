@@ -1,10 +1,10 @@
 import { Dispatch } from 'redux';
-import { ICompany as Company } from '../../models/company';
+import { ICompany as Company } from '../../../models/company';
 import { AxiosResponse } from 'axios';
-import axios from '../../services/axios';
-import history from '../../history';
-import { CompanyActionTypes } from '../constants';
-import { ThunkResult } from './actionTypes';
+import axios from '../../../services/axios';
+import history from '../../../history';
+import { CompanyActionTypes } from '../../constants';
+import { ThunkResult } from '../actionTypes';
 import { 
     IFetchCompanies, 
     IFetchCompaniesSuccess, 

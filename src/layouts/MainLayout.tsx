@@ -1,10 +1,10 @@
 import { FC, ReactElement, ReactNode } from "react";
 import { Box, CssBaseline } from "@mui/material";
-import Footer from "./Footer";
-import Main from "./Main";
-import SideBar from "./Sidebar";
-import Header from "./Header";
-import Content from "./Content";
+import Footer from "../components/Footer";
+import Main from "../components/Main";
+import SideBar from "../components/Sidebar";
+import Header from "../components/Header";
+import Content from "../components/Content";
 
 
 interface LayoutProps {

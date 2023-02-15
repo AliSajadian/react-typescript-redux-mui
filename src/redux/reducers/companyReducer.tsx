@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { CompanyActions } from '../actions/companyActions';
+import { CompanyActions } from '../actions/company/companyActions';
 import { CompanyActionTypes } from '../constants';
 import { Reducer } from 'redux';
 import { ICompany as Company } from '../../models/company';
