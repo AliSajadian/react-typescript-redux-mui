@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import { Github } from '../assets/icons/Github';
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import packageJson from '../../package.json';
 
 interface SidebarFooterProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -52,8 +52,8 @@ const codeUrl =
 
 export const SidebarFooter: React.FC<SidebarFooterProps> = ({ children, collapsed, ...rest }) => {
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         display: 'flex',
         justifyContent: 'center',
         paddingBottom: '20px',
@@ -62,26 +62,26 @@ export const SidebarFooter: React.FC<SidebarFooterProps> = ({ children, collapse
     >
       {collapsed ? (
         <StyledCollapsedSidebarFooter href={codeUrl} target="_blank">
-          <Github size={28} />
+            <Github size={28} />
         </StyledCollapsedSidebarFooter>
       ) : (
         <StyledSidebarFooter {...rest}>
-          <div style={{ marginBottom: '12px' }}>
+          <Box sx={{ marginBottom: '12px' }}>
             <Github size={30} />
-          </div>
+          </Box>
           <Typography fontWeight={600}>Pro Template</Typography>
-          <Typography variant="caption" style={{ letterSpacing: 1, opacity: 0.7 }}>
+          <Typography variant="caption" sx={{ letterSpacing: 1, opacity: 0.7 }}>
             V {packageJson.version}
           </Typography>
-          <div style={{ marginTop: '16px' }}>
+          <Box sx={{ marginTop: '16px' }}>
             <StyledButton href={codeUrl} target="_blank">
               <Typography variant="caption" color="#607489" fontWeight={600}>
                 View code
               </Typography>
             </StyledButton>
-          </div>
+          </Box>
         </StyledSidebarFooter>
       )}
-    </div>
+    </Box>
   );
 };

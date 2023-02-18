@@ -94,13 +94,6 @@ const SideBar: FC = (): ReactElement => {
             Home
           </MenuItem>
           <SubMenu icon={<InfoOutlined />} label="BaseInfo">
-          {/* navigate('baseinfo/department', { replace: true }) */}
-            {/* <MenuItem onClick={() => menuItemClickHandler('Company')}><Link href="baseinfo/company">Company</Link></MenuItem>
-            <MenuItem onClick={() => menuItemClickHandler('Department')}><Link href="baseinfo/department">Department</Link></MenuItem>
-            <MenuItem onClick={() => menuItemClickHandler('Employee')}><Link href="baseinfo/employee">Employee</Link></MenuItem>
-            <MenuItem onClick={() => menuItemClickHandler('JobPosition')}><Link href="baseinfo/jobPosition">JobPosition</Link></MenuItem>
-            <MenuItem onClick={() => menuItemClickHandler('Project')}><Link href="baseinfo/jobPosition">Project</Link></MenuItem> */}
-
             <MenuItem onClick={() => navigate('baseinfo/company', { replace: true })}
               onMouseUp={() => menuItemMouseUpHandler('Company')}>Company</MenuItem>
             <MenuItem onClick={() => navigate('baseinfo/department', { replace: true })}
@@ -112,29 +105,27 @@ const SideBar: FC = (): ReactElement => {
             <MenuItem onClick={() => navigate('baseinfo/Project', { replace: true })}
               onMouseUp={() => menuItemMouseUpHandler('Project')}>Project</MenuItem>
           </SubMenu>
-          <SubMenu icon={<RestaurantMenuOutlined />} label="RestaurantMenuOutlined">
-            {/* <MenuItem onClick={() => menuItemClickHandler('Meal')}><Link href="restaurant/meal">Meal</Link></MenuItem>
-            <MenuItem onClick={() => menuItemClickHandler('Monthly Meals')}><Link href="restaurant/mealssettingmonthly">Monthly Meals</Link></MenuItem>
-            <MenuItem onClick={() => menuItemClickHandler('Select Current Month Meals')}><Link href="restaurant/mealsselectioncurrentmonth">Select Current Month Meals</Link></MenuItem>
-            <MenuItem onClick={() => menuItemClickHandler('Select Next Month Meals')}><Link href="restaurant/mealsselectionnextmonth">Select Next Month Meals</Link></MenuItem> */}
-
-            <MenuItem onClick={() => navigate('restaurant/meal', { replace: true })}>Meal</MenuItem>
-            <MenuItem onClick={() => navigate('restaurant/mealssettingmonthly', { replace: true })}>Monthly Meals</MenuItem>
-            <MenuItem onClick={() => navigate('restaurant/mealsselectioncurrentmonth', { replace: true })}>Select Current Month Meals</MenuItem>
-            <MenuItem onClick={() => navigate('restaurant/mealsselectionnextmonth', { replace: true })}>Select Next Month Meals</MenuItem>
+          <SubMenu icon={<RestaurantMenuOutlined />} label="Restaurant">
+            <MenuItem onClick={() => navigate('restaurant/meal', { replace: true })}
+              onMouseUp={() => menuItemMouseUpHandler('Meal')}>Meal</MenuItem>
+            <MenuItem onClick={() => navigate('restaurant/mealssettingmonthly', { replace: true })}
+              onMouseUp={() => menuItemMouseUpHandler('Meals Setting Monthly')}>Meals Setting Monthly</MenuItem>
+            <MenuItem onClick={() => navigate('restaurant/mealsselectioncurrentmonth', { replace: true })}
+              onMouseUp={() => menuItemMouseUpHandler('Select Current Month Meals')}>Select Current Month Meals</MenuItem>
+            <MenuItem onClick={() => navigate('restaurant/mealsselectionnextmonth', { replace: true })}
+              onMouseUp={() => menuItemMouseUpHandler('Select Next Month Meals')}>Select Next Month Meals</MenuItem>
           </SubMenu>
-          <SubMenu icon={<SecurityOutlined />} label="SecurityOutlined">
-            {/* <MenuItem onClick={() => menuItemClickHandler('Users')}><Link href="security/user">Users</Link></MenuItem>
-            <MenuItem onClick={() => menuItemClickHandler('Groups')}><Link href="security/group">Groups</Link></MenuItem>
-            <MenuItem onClick={() => menuItemClickHandler('Permissions')}><Link href="security/permission">Permissions</Link></MenuItem>
-            <MenuItem onClick={() => menuItemClickHandler('Group Permissions')}><Link href="security/grouppermission">Group Permissions</Link></MenuItem>
-            <MenuItem onClick={() => menuItemClickHandler('User and Group')}><Link href="security/usergroup">User and Group</Link></MenuItem> */}
-
-            <MenuItem onClick={() => navigate('security/Users', { replace: true })}>Users</MenuItem>
-            <MenuItem onClick={() => navigate('security/groups', { replace: true })}>Groups</MenuItem>
-            <MenuItem onClick={() => navigate('security/permission', { replace: true })}>Permissions</MenuItem>
-            <MenuItem onClick={() => navigate('security/grouppermission', { replace: true })}>Group Permissions</MenuItem>
-            <MenuItem onClick={() => navigate('security/usergroup', { replace: true })}>User and Group</MenuItem>
+          <SubMenu icon={<SecurityOutlined />} label="Security">
+            <MenuItem onClick={() => navigate('security/user', { replace: true })}
+              onMouseUp={() => menuItemMouseUpHandler('Users')}>Users</MenuItem>
+            <MenuItem onClick={() => navigate('security/group', { replace: true })}
+              onMouseUp={() => menuItemMouseUpHandler('Groups')}>Groups</MenuItem>
+            <MenuItem onClick={() => navigate('security/permission', { replace: true })}
+              onMouseUp={() => menuItemMouseUpHandler('Permissions')}>Permissions</MenuItem>
+            <MenuItem onClick={() => navigate('security/grouppermission', { replace: true })}
+              onMouseUp={() => menuItemMouseUpHandler('Group Permissions')}>Group Permissions</MenuItem>
+            <MenuItem onClick={() => navigate('security/usergroup', { replace: true })}
+              onMouseUp={() => menuItemMouseUpHandler('User and Group')}>User and Group</MenuItem>
           </SubMenu>
    
           <Box sx={{ py: '0', px:'24px', mb: '8px', mt: '32px' }}>
@@ -161,7 +152,7 @@ const SideBar: FC = (): ReactElement => {
               </MenuItem>
             </Menu>
         </Menu>
-        <SidebarFooter/>
+        <SidebarFooter collapsed={collapsed}/>
       </Sidebar>
   )
 }

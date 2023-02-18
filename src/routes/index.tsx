@@ -123,7 +123,7 @@ export const routes: Array<IRoute> = [
         title: 'Page404',
         path: '*',
         enabled: true,
-        component: ChangePassword
+        component: Page404
     },    
     //-------------Security Authorization-------------
     {
