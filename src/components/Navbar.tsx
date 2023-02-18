@@ -49,20 +49,20 @@ const Navbar: FC = (): ReactElement => {
               <Menu />
             </IconButton>)}
           </Box>
-          <Box sx={{display:'flex', flexDirection:'row', justifyContent:'flex-end', border:1}}>
-            <Box sx={{display:'flex', justifyContent:'flex-end', border:1}}>
-              <Search sx={{m:'auto', color:'#8ba1b7', width:30, height:30}} style={{border:1}}/>
+          <Box sx={{display:'flex', flexDirection:'row', justifyContent:'flex-end'}}>
+            <Box sx={{display:'flex', justifyContent:'flex-end'}}>
+              <Search sx={{m:'auto', color:'#8ba1b7', width:30, height:30}} />
             </Box>
-            <Box sx={{display:'flex', flexDirection:'row', justifyContent:'flex-end', py:0, my:0, border:1}}>
+            <Box sx={{display:'flex', flexDirection:'row', justifyContent:'flex-end', py:0, my:0}}>
               <Select
-                sx={{'.MuiOutlinedInput-notchedOutline': { border: 0 }, maxHeight:'100%', py:0, my:0, border:1}}
+                sx={{'.MuiOutlinedInput-notchedOutline': { border: 0 }, maxHeight:'100%', py:0, my:0}}
                 displayEmpty
                 renderValue={(value) => {
                   return (
-                    <Box sx={{ display: "flex", gap: 1, border:1, py:0, my:0 }}>
+                    <Box sx={{ display: "flex", gap: 1, py:0, my:0 }}>
                       <>
-                        <SvgIcon color="primary" style={{width:30, height:30, border:1, paddingTop:0, paddingBottom:0, marginTop:0, marginBottom:0}}>
-                          <Bell style={{border:1}}/>
+                        <SvgIcon color="primary" style={{width:30, height:30, paddingTop:0, paddingBottom:0, marginTop:0, marginBottom:0}}>
+                          <Bell />
                         </SvgIcon>
                         {value}
                       </>
@@ -77,13 +77,13 @@ const Navbar: FC = (): ReactElement => {
               </Select>
               <Divider orientation="vertical" flexItem sx={{py:0, my:0}}/>
               <Select
-                sx={{'.MuiOutlinedInput-notchedOutline': { border: 0 }, maxHeight:'100%', border:1, px:0.5, py:0, my:0 }}
+                sx={{'.MuiOutlinedInput-notchedOutline': { border: 0 }, maxHeight:'100%', px:0.5, py:0, my:0 }}
                 displayEmpty
                 renderValue={(value) => {
                   return (
-                    <Box sx={{ display:"flex", justifyContent:'flex-end', gap: 1, border:1, py:0, my:0 }}>
+                    <Box sx={{ display:"flex", justifyContent:'flex-end', gap: 1, py:0, my:0 }}>
                       <>
-                        <Typography mx='auto' my={0} py={0} color={"#8ba1b7"} sx={{border:1}}>Ali Sajadian</Typography>
+                        <Typography mx='auto' my={0} py={0} color={"#8ba1b7"} >Ali Sajadian</Typography>
                         <Avatar sx={{ width:35, height:35, m:0, p:0}}
                             src='https://avatars.githubusercontent.com/u/47317870?s=400&u=79da86747deb409779c3575c0da73d90ad65fe81&v=4'
                             alt='avatar'
