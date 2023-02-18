@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import { Github } from '../assets/icons/Github';
+import { Github } from '../assets';
 import { Box, Typography } from '@mui/material';
 import packageJson from '../../package.json';
 
@@ -69,7 +69,7 @@ export const SidebarFooter: React.FC<SidebarFooterProps> = ({ children, collapse
           <Box sx={{ marginBottom: '12px' }}>
             <Github size={30} />
           </Box>
-          <Typography fontWeight={600}>Pro Template</Typography>
+          <Typography fontWeight={600} sx={{ fontSize:'11pt' }}>Pro Template</Typography>
           <Typography variant="caption" sx={{ letterSpacing: 1, opacity: 0.7 }}>
             V {packageJson.version}
           </Typography>

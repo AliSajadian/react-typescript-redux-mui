@@ -54,7 +54,7 @@ const SideBar: FC = (): ReactElement => {
         rtl={false} 
         breakPoint="sm"
         transitionDuration={800} 
-        style={{ minHeight: "100vh" }}
+        style={{ height: "100vh" }}
         backgroundColor={hexToRgba(themes[theme].sidebar.backgroundColor, hasImage ? 0.9 : 1)}
         rootStyles={{
           color: themes[theme].sidebar.color,
@@ -62,18 +62,23 @@ const SideBar: FC = (): ReactElement => {
       >
         <Menu >
 {/* backgroundColor:"rgb(26, 120, 109, 0.8)" */}
-        <MenuItem 
-          id="sidebarMnuHeader"
-          style={{ textAlign: "center", height: "auto", marginTop: 0, backgroundColor: "rgb(0, 32, 63, 1)" }}
-          icon={<MenuOutlined />}
-          onClick={() => {
-            toggle();
-          }}
-        >
-          {" "}
-          <Typography sx={{textAlign: "center", fontWeight: "bold", my: "1rem"}} variant="h5">RestaurantMenuOutlined</Typography>
-        </MenuItem>
-      </Menu>
+          <MenuItem 
+            id="sidebarMnuHeader"
+            style={{ textAlign: "center", height: "auto", marginTop: 0, backgroundColor: "rgb(0, 32, 63, 1)" }}
+            icon={<MenuOutlined />}
+            onClick={() => {
+              toggle();
+            }}
+          >
+            {" "}
+            <Typography 
+              sx={{textAlign: "center", fontWeight: "bold", my: "1rem"}} 
+              variant="h5"
+            >
+              Restaurant
+            </Typography>
+          </MenuItem>
+        </Menu>
             {/* <div style={{ flex: 1, marginBottom: '32px' }}> style={{ marginBottom: '24px', marginTop: '16px' }}*/}
             <Box sx={{ p: '0 24px', mb: '8px', mt: '8px' }}>
               <Typography

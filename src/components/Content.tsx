@@ -17,6 +17,8 @@ export const Content: FC<ContentProps> = ({ children }): ReactElement => {
     >
       <Card
         sx={{
+          display:'flex',
+          justifyContent:'center',
           mt:'0',
           mb:'1.5rem', 
           mx:'auto', 

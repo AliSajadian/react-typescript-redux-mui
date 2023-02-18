@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
 import { Grid } from '@mui/material';
-import SignIn1 from '../assets/SignIn1.png';
+import { SignIn1 } from '../assets';
 
 
 type AuthLayoutProps = {
