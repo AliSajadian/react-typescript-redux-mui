@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import { Github } from '../icons/Github';
+import { Github } from '../assets/icons/Github';
 import { Typography } from '@mui/material';
 import packageJson from '../../package.json';
 

@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import { Outlet } from 'react-router-dom';
 
 // import { Box, Grid } from "@mui/material";
-import { IRoute } from "../interfaces/RouteType";
+import { IRoute } from "../contracts/RouteType";
 import { routes as dashboardRoutes, authRoutes } from "./index";
 import MainLayout from "../layouts/MainLayout";
 // import ChangePasswordLayout from "../layouts/ChangePasswordLayout";
@@ -15,7 +15,8 @@ import AuthLayout from "../layouts/AuthLayout";
 // import AlertModal from "../components/Alert";
 // import ScrollToTop from "../components/ScrollToTop";
 import { RootState } from '../redux/index';
-import Page404 from "../pages/security/authentication/Page404";
+// import Page404 from "../pages/security/authentication/Page404";
+import React from "react";
 
 
 const ModifiedMainLayout = () => {
@@ -40,7 +41,7 @@ const AppRoutes: FC = () => {
     const isAuthenticated: boolean = useSelector(
         (state: RootState) => state.auth.authToken !== ''
     )
-    console.log('isAuthenticated:', isAuthenticated)
+    // console.log('isAuthenticated:', isAuthenticated)
     return (
         <>
             {isAuthenticated ? 
@@ -56,28 +57,20 @@ const AppRoutes: FC = () => {
                     </Route>
                 </Routes>
             :
-                <Routes>
-                    <Route element={<ModifiedAuthLayout/>}>
-                    {authRoutes.map((route: IRoute) => (
-                        <Route
-                            key={route.key}
-                            path={route.path}
-                            element={<route.component />}
-                        />
-                    ))}
-                    </Route>
-                    {/* <Route element={<ModifiedAuthLayout/>}>
-                        <Navigate to="authRoute.path" />
-                    </Route> */}
-                </Routes>
+                <React.Fragment>
+                    <Routes>
+                        <Route element={<ModifiedAuthLayout/>}>
+                        {authRoutes.map((route: IRoute) => (
+                            <Route
+                                key={route.key}
+                                path={route.path}
+                                element={<route.component />}
+                            />
+                        ))}
+                        </Route>
+                    </Routes>
+                </React.Fragment>
             }
-            <Routes>
-                <Route element={<ModifiedAuthLayout/>}>
-                    <Route 
-                        element={<Page404/>}
-                    />
-                </Route>
-            </Routes>
         </>
     )
 }

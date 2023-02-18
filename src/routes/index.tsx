@@ -1,6 +1,6 @@
 // import { Dashboard } from "@mui/icons-material";
 import async from "../components/Async";
-import { IRoute } from "../interfaces/RouteType";
+import { IRoute } from "../contracts/RouteType";
 
 
 const Dashboard = async(() => import("../pages/dashboard/Dashboard"));
@@ -113,15 +113,15 @@ export const routes: Array<IRoute> = [
     //-------------Security Authentication-------------
     {
         key: 'changepassword-route',
-        title: 'page404',
-        path: 'auth/page404',
+        title: 'ChangePassword',
+        path: 'auth/changepassword',
         enabled: true,
-        component: Page404
+        component: ChangePassword
     },
     {
         key: 'page404-route',
         title: 'Page404',
-        path: '',
+        path: '*',
         enabled: true,
         component: ChangePassword
     },    
@@ -165,14 +165,7 @@ export const routes: Array<IRoute> = [
 
 export const authRoutes: Array<IRoute> = [
    //-------------Security Authentication-------------
-//    {
-//         key: 'dashboard-route',
-//         title: 'Dashboard',
-//         path: '/',
-//         enabled: true,
-//         component: Dashboard
-//     },
-    {
+   {
         key: 'signin-route',
         title: 'SignIn',
         path: '/',
@@ -196,7 +189,7 @@ export const authRoutes: Array<IRoute> = [
     {
         key: 'page404-route',
         title: 'Page404',
-        path: '',
+        path: '*',
         enabled: true,
         component: Page404
     },    

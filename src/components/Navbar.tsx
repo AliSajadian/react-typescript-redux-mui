@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useProSidebar } from "react-pro-sidebar";
-import { useSidebar } from "../hooks/useSidebar";
+import { useSidebar, useSidebarSelectedMenuTitleContext } from "../hooks";
 // import { routes } from "../routes";
 // import { NavLink } from "react-router-dom";
 
@@ -19,6 +19,7 @@ import { useSidebar } from "../hooks/useSidebar";
 const Navbar: FC = (): ReactElement => {
   const { broken } = useProSidebar();
   const { toggle } = useSidebar();
+  const { menuTitle } = useSidebarSelectedMenuTitleContext();
 
   // const [anchorElNav, setAnchorElNav] = React.useState(null);
 
@@ -41,7 +42,7 @@ const Navbar: FC = (): ReactElement => {
               display: { xs: "none", md: "flex" },
             }}
           >
-            Nav Bar
+            {menuTitle}
           </Typography>
           {/* display: { xs: "flex" }, , sm: "none", md: "none", lg:"none", xl:"none" 
           <Box sx={{ flexGrow: 1, textAlign: "left", pl: -10}}>*/}

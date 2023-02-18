@@ -14,7 +14,7 @@ export interface IAuthState {
 }
 
 const initialState = {
-    authToken : "" ,
+    authToken : "test" ,
     isPasswordChanged: false,
     user : null , 
     loading: false,

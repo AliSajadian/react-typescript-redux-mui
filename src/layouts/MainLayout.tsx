@@ -5,12 +5,12 @@ import Main from "../components/Main";
 import SideBar from "../components/Sidebar";
 import Header from "../components/Header";
 import Content from "../components/Content";
+import { SidebarSelectedMenuTitleProvider } from "../context";
 
 
 interface LayoutProps {
   children: ReactNode;
 }
-
 const Layout: FC<LayoutProps> = ({ children }): ReactElement => {
   return (
     <Box
@@ -23,14 +23,16 @@ const Layout: FC<LayoutProps> = ({ children }): ReactElement => {
     }}
 >
       <CssBaseline />
-      <SideBar />
-      <Main >
-        <Header />
-        <Content>
-          {children}
-        </Content>
-        <Footer />
-      </Main>
+      <SidebarSelectedMenuTitleProvider>
+        <SideBar />
+        <Main >
+          <Header />
+          <Content>
+            {children}
+          </Content>
+          <Footer />
+        </Main>
+      </SidebarSelectedMenuTitleProvider>
     </Box>
   );
 };

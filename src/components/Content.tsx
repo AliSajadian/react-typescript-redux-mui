@@ -9,9 +9,6 @@ export const Content: FC<ContentProps> = ({ children }): ReactElement => {
   return (
     <Box
         sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-start",
             minHeight: "100vh",
             maxWidth: "100vw",
             flexGrow: 1,
@@ -20,14 +17,11 @@ export const Content: FC<ContentProps> = ({ children }): ReactElement => {
     >
       <Card
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-start#",
           mt:'0',
           mb:'1.5rem', 
           mx:'auto', 
           height:'100%', 
-          width:'80%', 
+          width:{xs:'100%', sm:'90%', md:'80%', lg:'80%', xl:'80%'}, 
           boxShadow:15,
           // "10px 10px 10px #b6d4f9",
           backgroundColor:'#e8f1fc',

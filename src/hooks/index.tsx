@@ -1,5 +1,6 @@
 import { usePrevious } from "./usePrevious";
-import { useSidebar } from "./useSidebar";
+import { hexToRgba, useSidebar } from "./useSidebar";
 import { withRouter } from "./withRouter";
+import { useSidebarSelectedMenuTitleContext } from './useSidebarSelectedMenuTitleContext';
 
-export { usePrevious, useSidebar, withRouter }
+export { usePrevious, hexToRgba, useSidebar, useSidebarSelectedMenuTitleContext, withRouter }

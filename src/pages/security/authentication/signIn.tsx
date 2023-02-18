@@ -40,8 +40,9 @@ const SignIn: FC = (): ReactElement => {
       border={1}
       borderRadius={4}
       boxShadow={12}
-      sx={{backgroundColor:'#f5e4da'}}
+      sx={{backgroundColor:'#f7d2b9'}}
     >
+      {/* f7ddcd f0d6c5 edd0bc f7d5bf */}
       <Box
         flexGrow= {1}
         display= "flex"
