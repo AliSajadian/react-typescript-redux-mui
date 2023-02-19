@@ -1,9 +1,8 @@
-import _ from 'lodash';
-import { CompanyActions } from '../actions/company/companyActions';
-import { CompanyActionTypes } from '../constants';
 import { Reducer } from 'redux';
-import { ICompany as Company } from '../../models/company';
+import _ from 'lodash';
 
+import { Action, ActionType } from '../actionTypes/companyActionTypes';
+import { ICompany as Company } from '../../models/company';
 
 export interface ICompaniesState {
     companies: Company[];
@@ -15,25 +14,31 @@ const initialState = {
     loading: false,
     error: null,   
 };
-
-export const CompanyReducer: Reducer<ICompaniesState, CompanyActions> = (
+export const CompanyReducer: Reducer<ICompaniesState, Action> = (
     state = initialState,
     action
 ) => {
     switch (action.type) {
-        case CompanyActionTypes.FETCH_COMPANY:
-        case CompanyActionTypes.FETCH_COMPANIES:
-        case CompanyActionTypes.ADD_COMPANY:
-        case CompanyActionTypes.EDIT_COMPANY:
+        case ActionType.FETCH_COMPANY:
+        case ActionType.FETCH_COMPANIES:
+        case ActionType.ADD_COMPANY:
+        case ActionType.EDIT_COMPANY:
+        case ActionType.DELETE_COMPANY:
             return { ...state, loading: true };
 
-        case CompanyActionTypes.FETCH_COMPANY_FAIL:
-        case CompanyActionTypes.FETCH_COMPANIES_FAIL:
-        case CompanyActionTypes.ADD_COMPANY_FAIL:
-            return { ...state, loading: false };
+        case ActionType.FETCH_COMPANY_FAIL:
+        case ActionType.FETCH_COMPANIES_FAIL:
+        case ActionType.ADD_COMPANY_FAIL:
+        case ActionType.EDIT_COMPANY_FAIL:
+        case ActionType.DELETE_COMPANY_FAIL:
+            return { 
+                ...state, 
+                loading: false,
+                error: action.payload
+            };
 
-        case CompanyActionTypes.FETCH_COMPANY_SUCCESS:
-        case CompanyActionTypes.ADD_COMPANY_SUCCESS:
+        case ActionType.FETCH_COMPANY_SUCCESS:
+        case ActionType.ADD_COMPANY_SUCCESS:
             const { id } = action.payload;
             return {
                 ...state,
@@ -41,7 +46,7 @@ export const CompanyReducer: Reducer<ICompaniesState, CompanyActions> = (
                 loading: false
             };
 
-        case CompanyActionTypes.EDIT_COMPANY_SUCCESS:
+        case ActionType.EDIT_COMPANY_SUCCESS:
             const company: Company = action.payload
             const index = state.companies.findIndex(itm => itm.id === company.id)
             const companiesPart1 = state.companies.slice(0, index)
@@ -51,14 +56,14 @@ export const CompanyReducer: Reducer<ICompaniesState, CompanyActions> = (
                 companies: { ...companiesPart1, company, ...companiesPart2 },
                 loading: false
             };
-        case CompanyActionTypes.FETCH_COMPANIES_SUCCESS:
+        case ActionType.FETCH_COMPANIES_SUCCESS:
             return {
                 ...state,
                 companies: { ...state.companies, ..._.mapKeys(action.payload, 'id') },
                 loading: false
             };
 
-        case CompanyActionTypes.DELETE_COMPANY_SUCCESS:
+        case ActionType.DELETE_COMPANY_SUCCESS:
             return {
                 ...state,
                 companies: { ..._.omit(state.companies, action.payload) }
@@ -68,5 +73,3 @@ export const CompanyReducer: Reducer<ICompaniesState, CompanyActions> = (
             return state;
     }
 };
-
-// export default companiesReducer;

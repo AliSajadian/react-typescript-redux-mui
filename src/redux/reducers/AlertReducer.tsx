@@ -1,6 +1,5 @@
 import { Reducer } from 'redux';
-import { AlertActionTypes as types } from "../constants";
-import { AlertActions } from '../actions/alert/alertActions';
+import { Action, ActionType } from '../actionTypes/alertActionTypes';
 
 
 export interface IAlertState {
@@ -13,18 +12,18 @@ const initialState = {
     message: '',
   };
 
-export const AlertReducer: Reducer<IAlertState, AlertActions> = (
+export const AlertReducer: Reducer<IAlertState, Action> = (
     state = initialState,
     action
 ) => {
     switch (action.type) {
-        case types.OPEN_ALERT_MODAL:
+        case ActionType.OPEN_ALERT_MODAL:
             return {
               ...state,
               message: action.payload,
               isModalOpen: true
             };
-          case types.TOGGLE_ALERT_MODAL:
+          case ActionType.TOGGLE_ALERT_MODAL:
             return {
               ...state,
               isModalOpen: !state.isModalOpen

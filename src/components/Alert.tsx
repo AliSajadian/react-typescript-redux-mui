@@ -1,16 +1,14 @@
-import React, {Component, FC} from "react";
-import { 
-    Modal, 
-    Card, 
-    CardContent, 
-    Button,
- } from "@mui/material";
-import { connect } from "react-redux";
+import { FC } from "react";
+// import { 
+//     Modal, 
+//     Card, 
+//     CardContent, 
+//     Button,
+//  } from "@mui/material";
+// import { connect } from "react-redux";
 import { useDispatch, useSelector } from "react-redux";
-import {
-    AlertModalToggler,
-} from "../redux/actions/alert/alertActions";
-import { RootState } from '../redux/index';
+import { AlertModalToggler } from "../redux/actionCreators/alertActions";
+import { RootState } from '../redux/store/store';
 import { IAlertState as AlertState } from '../redux/reducers/AlertReducer';
 
 

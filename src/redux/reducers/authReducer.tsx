@@ -1,8 +1,8 @@
 import { Reducer } from 'redux';
-import { AuthActions } from '../actions/auth/authActions';
-import { AuthActionTypes } from '../constants';
+
 import { IAuth as Auth } from '../../models/auth';
 import { IUser } from '../../models/user';
+import { Action, ActionType } from '../actionTypes/authActionTypes';
 
 
 export interface IAuthState {
@@ -21,15 +21,15 @@ const initialState = {
     error : null
 }
 
-export const AuthReducer: Reducer<IAuthState, AuthActions> = (
+export const AuthReducer: Reducer<IAuthState, Action> = (
     state = initialState,
     action
 ) => {
     switch (action.type) {
-        case AuthActionTypes.AUTH_START:
+        case ActionType.AUTH_START:
             return { ...state, loading: true };
 
-        case AuthActionTypes.AUTH_SUCCESS:
+        case ActionType.AUTH_SUCCESS:
             const auth: Auth = action.payload
             return {
                 ...state,
@@ -38,9 +38,10 @@ export const AuthReducer: Reducer<IAuthState, AuthActions> = (
                 error : null , 
                 loading: false
             };
-        case AuthActionTypes.AUTH_FAIL:
+        case ActionType.AUTH_FAIL:
             return {
                 ...state,
+                error: action.payload,
                 loading: false
             };
 

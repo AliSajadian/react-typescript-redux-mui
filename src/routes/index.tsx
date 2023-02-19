@@ -22,7 +22,6 @@ const ChangePassword = async(() => import("../pages/security/authentication/chan
 const ForgetPassword = async(() => import("../pages/security/authentication/forgetPassword"))
 const Page404 = async(() => import("../pages/security/authentication/Page404"))
 
-
 const Group = async(() => import("../pages/security/authorization/group"));
 const GroupPermission = async(() => import("../pages/security/authorization/groupPermission"));
 const Permission = async(() => import("../pages/security/authorization/permission"));
