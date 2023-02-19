@@ -64,7 +64,7 @@ const SideBar: FC = (): ReactElement => {
 {/* backgroundColor:"rgb(26, 120, 109, 0.8)" */}
           <MenuItem 
             id="sidebarMnuHeader"
-            style={{ textAlign: "center", height: "auto", marginTop: 0, backgroundColor: "rgb(0, 32, 63, 1)" }}
+            style={{ textAlign: "center", height: 68, marginTop: 0, backgroundColor: "rgb(0, 32, 63, 1)" }}
             icon={<MenuOutlined />}
             onClick={() => {
               toggle();

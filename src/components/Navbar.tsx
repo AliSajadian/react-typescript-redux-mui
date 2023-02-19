@@ -24,8 +24,6 @@ const Navbar: FC = (): ReactElement => {
   const { broken } = useProSidebar();
   const { toggle } = useSidebar();
   const { menuTitle } = useSidebarSelectedMenuTitleContext();
-  var mnuHeaderHeight = document.getElementById("sidebarMnuHeader")?.clientHeight;
-
   return (
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
@@ -76,7 +74,7 @@ const Navbar: FC = (): ReactElement => {
                 <MenuItem>Notification #4</MenuItem>
               </Select>
               <Divider orientation="vertical" flexItem sx={{py:0, my:0}}/>
-              <Select
+              <Select id='navbarSelect'
                 sx={{'.MuiOutlinedInput-notchedOutline': { border: 0 }, maxHeight:'100%', px:0.5, py:0, my:0 }}
                 displayEmpty
                 renderValue={(value) => {
@@ -113,6 +111,7 @@ export default Navbar;
 
 
 
+      // {/* <ConsoleLog title={'navbarSelect height'} message={document.getElementById("navbarSelect")?.clientHeight.toString()}/> */}
 
           //   {/* <Menu
           //     id="menu-appbar"
