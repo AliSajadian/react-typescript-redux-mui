@@ -16,21 +16,26 @@ import { Bell } from "../assets";
 import { useProSidebar } from "react-pro-sidebar";
 import { 
   useSidebar, 
-  useSidebarSelectedMenuTitleContext 
+  useSidebarSelectedMenuTitleContext,
+  useTemplateThemeModeContext, 
 } from "../hooks";
+import { TemplateThemeModeContextType } from "../context";
 
 
 const Navbar: FC = (): ReactElement => {
   const { broken } = useProSidebar();
   const { toggle } = useSidebar();
   const { menuTitle } = useSidebarSelectedMenuTitleContext();
+  const { headerColor } = useTemplateThemeModeContext() as TemplateThemeModeContextType;
+
+
   return (
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
           <Box sx={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
             <Typography
               variant="h6"
-              color={"#8ba1b7"}
+              color={headerColor}
               noWrap
               sx={{
                 mr: 2,
@@ -42,14 +47,18 @@ const Navbar: FC = (): ReactElement => {
             {broken && (
             <IconButton
               onClick={toggle}
-              sx={{color:"#8ba1b7", mt:"8px"}}
+              sx={{
+                color:headerColor, 
+                mt:"8px"}}
             >
               <Menu />
             </IconButton>)}
           </Box>
           <Box sx={{display:'flex', flexDirection:'row', justifyContent:'flex-end'}}>
             <Box sx={{display:'flex', justifyContent:'flex-end'}}>
-              <Search sx={{m:'auto', color:'#8ba1b7', width:30, height:30}} />
+              <Search sx={{m:'auto', 
+              color:headerColor, 
+              width:30, height:30}} />
             </Box>
             <Box sx={{display:'flex', flexDirection:'row', justifyContent:'flex-end', py:0, my:0}}>
               <Select
@@ -59,7 +68,9 @@ const Navbar: FC = (): ReactElement => {
                   return (
                     <Box sx={{ display: "flex", gap: 1, py:0, my:0 }}>
                       <>
-                        <SvgIcon color="primary" style={{width:30, height:30, paddingTop:0, paddingBottom:0, marginTop:0, marginBottom:0}}>
+                        <SvgIcon style={{ 
+                          color:headerColor, 
+                          width:30, height:30, paddingTop:0, paddingBottom:0, marginTop:0, marginBottom:0}}>
                           <Bell />
                         </SvgIcon>
                         {value}
@@ -81,7 +92,9 @@ const Navbar: FC = (): ReactElement => {
                   return (
                     <Box sx={{ display:"flex", justifyContent:'flex-end', gap: 1, py:0, my:0 }}>
                       <>
-                        <Typography mx='auto' my={0} py={0} color={"#8ba1b7"} >Ali Sajadian</Typography>
+                        <Typography mx='auto' my={0} py={0} 
+                        color={headerColor} 
+                        >Ali Sajadian</Typography>
                         <Avatar sx={{ width:35, height:35, m:0, p:0}}
                             src='https://avatars.githubusercontent.com/u/47317870?s=400&u=79da86747deb409779c3575c0da73d90ad65fe81&v=4'
                             alt='avatar'

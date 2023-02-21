@@ -6,10 +6,16 @@ interface ContentProps {
 }
 
 export const Content: FC<ContentProps> = ({ children }): ReactElement => {
+  var mnuHeaderHeight = document.getElementById("sidebarMnuHeader")?.clientHeight
+  var footerHeight = document.getElementById("footer")?.clientHeight
+  const height: string = 
+    'calc(100% - ' 
+    + (mnuHeaderHeight? mnuHeaderHeight : 0 + (footerHeight? footerHeight : 0)).toString() 
+    + ')'
   return (
     <Box
         sx={{
-            minHeight: "100vh",
+            minHeight: height,
             maxWidth: "100vw",
             flexGrow: 1,
             backgroundColor: '#dcecfc'
@@ -19,8 +25,7 @@ export const Content: FC<ContentProps> = ({ children }): ReactElement => {
         sx={{
           display:'flex',
           justifyContent:'center',
-          mt:'0',
-          mb:'1.5rem', 
+          my:'0',
           mx:'auto', 
           height:'100%', 
           width:{xs:'100%', sm:'90%', md:'80%', lg:'80%', xl:'80%'}, 

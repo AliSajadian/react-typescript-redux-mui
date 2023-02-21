@@ -5,25 +5,26 @@ import Main from "../components/Main";
 import SideBar from "../components/Sidebar";
 import Header from "../components/Header";
 import Content from "../components/Content";
-import { SidebarSelectedMenuTitleProvider } from "../context";
+import { useTemplateDirectionContext } from "../hooks";
 
 
 interface LayoutProps {
   children: ReactNode;
 }
 const Layout: FC<LayoutProps> = ({ children }): ReactElement => {
+  const { rtl } = useTemplateDirectionContext()
+  const flexDirection: string = rtl ? "row-reverse" : "row"
   return (
     <Box
-    sx={{
-        display: "flex",
-        // flexDirection: "row-reverse",
-        minHeight: "100vh",
-        maxWidth: "100vw",
-        flexGrow: 1,
-    }}
->
+      sx={{
+          display: "flex",
+          flexDirection: {flexDirection},
+          maxHeight: "100vh",
+          maxWidth: "100vw",
+          flexGrow: 1,
+      }}
+    >
       <CssBaseline />
-      <SidebarSelectedMenuTitleProvider>
         <SideBar />
         <Main >
           <Header />
@@ -32,7 +33,6 @@ const Layout: FC<LayoutProps> = ({ children }): ReactElement => {
           </Content>
           <Footer />
         </Main>
-      </SidebarSelectedMenuTitleProvider>
     </Box>
   );
 };

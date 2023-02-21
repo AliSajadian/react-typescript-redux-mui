@@ -1,10 +1,11 @@
 // import { Dashboard } from "@mui/icons-material";
 import async from "../components/Async";
-import { IRoute } from "../contracts/RouteType";
+import { IRoute } from "../types/RouteType";
 
 
 const Dashboard = async(() => import("../pages/dashboard/Dashboard"));
 const About = async(() => import("../pages/About"));
+const Config = async(() => import("../pages/config"));
 const Company = async(() => import("../pages/baseInfo/company"));
 const Department = async(() => import("../pages/baseInfo/department"));
 const Employee = async(() => import("../pages/baseInfo/employee"));
@@ -43,6 +44,13 @@ export const routes: Array<IRoute> = [
         path: '/about',
         enabled: true,
         component: About
+    },
+    {
+        key: 'config-route',
+        title: 'Config',
+        path: '/config',
+        enabled: true,
+        component: Config
     },
     //------------------Base Info---------------------
     {

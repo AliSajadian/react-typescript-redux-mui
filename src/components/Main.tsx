@@ -12,6 +12,8 @@ export const Main: FC<MainProps> = ({ children }): ReactElement => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "flex-start",
+            overflowY: "scroll",
+            whiteSpace: "nowrap",
             minHeight: "100vh",
             maxWidth: "100vw",
             flexGrow: 1,

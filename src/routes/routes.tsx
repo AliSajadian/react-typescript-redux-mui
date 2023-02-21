@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { Outlet } from 'react-router-dom';
 
-import { IRoute } from "../contracts/RouteType";
+import { IRoute } from "../types/RouteType";
 import { routes as dashboardRoutes, authRoutes } from "./index";
 import MainLayout from "../layouts/MainLayout";
 import AuthLayout from "../layouts/AuthLayout";

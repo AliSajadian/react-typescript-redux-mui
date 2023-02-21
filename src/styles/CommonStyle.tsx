@@ -6,6 +6,10 @@ export const themes = {
       backgroundColor: '#ffffff',
       color: '#607489',
     },
+    headerFooterColor: {
+      backgroundColor: '#417eb8d5',
+      color: '#00203f32',
+    },
     menu: {
       menuContent: '#fbfcfd',
       icon: '#0098e5',
@@ -23,6 +27,10 @@ export const themes = {
       backgroundColor: '#0b2948',
       color: '#8ba1b7',
     },
+    headerFooterColor: {
+      backgroundColor: '#00203f32',
+      color: '#8ba1b7',
+    },
     menu: {
       menuContent: '#082440',
       icon: '#59d0ff',
@@ -35,14 +43,4 @@ export const themes = {
       },
     },
   },
-  // navbar: {
-  //   :link: {
-
-  //   },
-  //   :visited: {
-
-  //   },
-  //   textDecoration: "none",
-  //   color: "inherit",
-  // },
 };

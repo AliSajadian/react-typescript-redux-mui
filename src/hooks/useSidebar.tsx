@@ -1,13 +1,14 @@
 import React from "react";
 import { useProSidebar } from "react-pro-sidebar";
-import { menuClasses } from '../utils/utilityClasses';
-import { MenuItemStyles } from "../contracts/SidebarTypes";
-import { Theme, themes } from "../styles/SidebarStyle";
+import { MenuItemStyles } from "../types/SidebarTypes";
+import { themes } from "../styles/CommonStyle";
+import { useTemplateThemeModeContext } from "./useTemplateThemeModeContext";
+import { TemplateThemeModeContextType } from "../context";
 
 
 export const useSidebar = () => {
   const { collapseSidebar, toggleSidebar, collapsed, toggled, broken } = useProSidebar();
-  const [theme] = React.useState<Theme>('dark');
+  const { theme } = useTemplateThemeModeContext() as TemplateThemeModeContextType;
   const [hasImage] = React.useState<boolean>(false);
 
   // // handle on theme change event
@@ -38,7 +39,7 @@ export const useSidebar = () => {
     },
     icon: {
       color: themes[theme].menu.icon,
-      [`&.${menuClasses.disabled}`]: {
+      [`&.${'ps-disabled'}`]: {
         color: themes[theme].menu.disabled.color,
       },
     },
@@ -52,7 +53,7 @@ export const useSidebar = () => {
           : 'transparent',
     }),
     button: {
-      [`&.${menuClasses.disabled}`]: {
+      [`&.${'ps-disabled'}`]: {
         color: themes[theme].menu.disabled.color,
       },
       '&:hover': {
@@ -68,7 +69,6 @@ export const useSidebar = () => {
   return{
     toggle,
     menuItemStyles,
-    theme,
     hasImage,
   }
 }

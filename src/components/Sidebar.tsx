@@ -18,20 +18,21 @@ import {
   SecurityOutlined, 
   FoodBankOutlined, 
   SearchOutlined,
-  RecommendOutlined
+  RecommendOutlined,
+  SettingsApplications,
 } from "@mui/icons-material";
 import { 
   Box, 
   Typography 
 } from "@mui/material";
-import { themes } from "../styles/SidebarStyle";
 import { SidebarFooter } from "./SidebarFooter";
 import { Badge } from "./Badge";
 import { 
-  hexToRgba, 
   useSidebar, 
-  useSidebarSelectedMenuTitleContext 
+  useSidebarSelectedMenuTitleContext,
+  useTemplateThemeModeContext, 
 } from "../hooks";
+import { TemplateThemeModeContextType } from "../context";
 
 
 const SideBar: FC = (): ReactElement => {
@@ -40,10 +41,9 @@ const SideBar: FC = (): ReactElement => {
   const { 
     toggle,
     menuItemStyles,
-    theme,
-    hasImage
   } = useSidebar();
   const { setMenuTitle } = useSidebarSelectedMenuTitleContext();
+  const { color, bgColor, headerColor, headerBgColor } = useTemplateThemeModeContext() as TemplateThemeModeContextType;
 
   const menuItemMouseUpHandler = (mnuTitle: string) => {
     setMenuTitle(mnuTitle)
@@ -55,24 +55,30 @@ const SideBar: FC = (): ReactElement => {
         breakPoint="sm"
         transitionDuration={800} 
         style={{ height: "100vh" }}
-        backgroundColor={hexToRgba(themes[theme].sidebar.backgroundColor, hasImage ? 0.9 : 1)}
+        backgroundColor={bgColor}
         rootStyles={{
-          color: themes[theme].sidebar.color,
+          color: color,
         }}
       >
         <Menu >
-{/* backgroundColor:"rgb(26, 120, 109, 0.8)" */}
           <MenuItem 
             id="sidebarMnuHeader"
-            style={{ textAlign: "center", height: 68, marginTop: 0, backgroundColor: "rgb(0, 32, 63, 1)" }}
-            icon={<MenuOutlined />}
+            style={{ 
+              textAlign: "center", 
+              height: 'auto', 
+              marginTop: 0,
+              backgroundColor: headerBgColor
+            }}
+            icon={<MenuOutlined sx={{color:headerColor}}/>}
             onClick={() => {
               toggle();
             }}
           >
             {" "}
             <Typography 
-              sx={{textAlign: "center", fontWeight: "bold", my: "1rem"}} 
+              sx={{textAlign:"center", fontWeight:"bold", my:"1rem", 
+              color:headerColor
+            }} 
               variant="h5"
             >
               Restaurant
@@ -156,6 +162,13 @@ const SideBar: FC = (): ReactElement => {
                 Examples
               </MenuItem>
             </Menu>
+            <MenuItem 
+              icon={<SettingsApplications/>}
+              onClick={() => navigate('/config', { replace: true })}
+              onMouseUp={() => menuItemMouseUpHandler('Template Configuration')}
+            >
+              Template Config
+            </MenuItem>
         </Menu>
         <SidebarFooter collapsed={collapsed}/>
       </Sidebar>
