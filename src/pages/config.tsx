@@ -5,7 +5,8 @@ import {
     Stack, 
     styled, 
     Switch, 
-    Typography 
+    Typography, 
+    useTheme
 } from "@mui/material";
 import { 
   useTemplateDirectionContext, 
@@ -57,7 +58,7 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
   }));
   
 const Config: FC = (): ReactElement => {
-  const { rtl, setRtl } = useTemplateDirectionContext()
+  const { rtl, setRtl } = useTemplateDirectionContext();
   const { isDark, toggleThemeMode } = useTemplateThemeModeContext() as TemplateThemeModeContextType;
   
   const rtlDirectionSwitchChangeHandler = () => {
@@ -74,7 +75,6 @@ const Config: FC = (): ReactElement => {
           backgroundColor: "inherit",
           display: "flex",
           justifyContent: "flex-start",
-          // alignItems: "center",
       }}
     >
       <Box ml={3} mt={5}>

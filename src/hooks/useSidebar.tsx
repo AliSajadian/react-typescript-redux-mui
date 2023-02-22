@@ -1,14 +1,11 @@
 import React from "react";
 import { useProSidebar } from "react-pro-sidebar";
 import { MenuItemStyles } from "../types/SidebarTypes";
-import { themes } from "../styles/CommonStyle";
-import { useTemplateThemeModeContext } from "./useTemplateThemeModeContext";
-import { TemplateThemeModeContextType } from "../context";
-
+import { Theme, themes } from "../styles/CommonStyle";
 
 export const useSidebar = () => {
   const { collapseSidebar, toggleSidebar, collapsed, toggled, broken } = useProSidebar();
-  const { theme } = useTemplateThemeModeContext() as TemplateThemeModeContextType;
+  const [theme, setTheme] = React.useState<Theme>('dark');
   const [hasImage] = React.useState<boolean>(false);
 
   // // handle on theme change event

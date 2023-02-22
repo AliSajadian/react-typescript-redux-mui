@@ -8,16 +8,16 @@ interface MainProps {
 export const Main: FC<MainProps> = ({ children }): ReactElement => {
   return (
     <Box
-        sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-start",
-            overflowY: "scroll",
-            whiteSpace: "nowrap",
-            minHeight: "100vh",
-            maxWidth: "100vw",
-            flexGrow: 1,
-        }}
+      id="Main"
+      sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          overflowY: "auto",
+          minHeight: "100vh",
+          maxWidth: "100vw",
+          flexGrow: 1,
+      }}
     >
       {children}
     </Box>

@@ -10,6 +10,7 @@ import {
   MenuItem,
   SvgIcon,
   Avatar,
+  useTheme
 } from "@mui/material";
 import { Menu, Search, } from "@mui/icons-material";
 import { Bell } from "../assets";
@@ -23,11 +24,11 @@ import { TemplateThemeModeContextType } from "../context";
 
 
 const Navbar: FC = (): ReactElement => {
+  const theme = useTheme()
   const { broken } = useProSidebar();
   const { toggle } = useSidebar();
   const { menuTitle } = useSidebarSelectedMenuTitleContext();
-  const { headerColor } = useTemplateThemeModeContext() as TemplateThemeModeContextType;
-
+  const { isDark } = useTemplateThemeModeContext() as TemplateThemeModeContextType;
 
   return (
       <Container maxWidth="xl">
@@ -35,7 +36,7 @@ const Navbar: FC = (): ReactElement => {
           <Box sx={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
             <Typography
               variant="h6"
-              color={headerColor}
+              color={isDark ? theme.palette.success.dark : theme.palette.success.light}
               noWrap
               sx={{
                 mr: 2,
@@ -48,7 +49,7 @@ const Navbar: FC = (): ReactElement => {
             <IconButton
               onClick={toggle}
               sx={{
-                color:headerColor, 
+                color:isDark ? theme.palette.success.dark : theme.palette.success.light, 
                 mt:"8px"}}
             >
               <Menu />
@@ -57,7 +58,7 @@ const Navbar: FC = (): ReactElement => {
           <Box sx={{display:'flex', flexDirection:'row', justifyContent:'flex-end'}}>
             <Box sx={{display:'flex', justifyContent:'flex-end'}}>
               <Search sx={{m:'auto', 
-              color:headerColor, 
+              color:isDark ? theme.palette.success.dark : theme.palette.success.light, 
               width:30, height:30}} />
             </Box>
             <Box sx={{display:'flex', flexDirection:'row', justifyContent:'flex-end', py:0, my:0}}>
@@ -69,7 +70,7 @@ const Navbar: FC = (): ReactElement => {
                     <Box sx={{ display: "flex", gap: 1, py:0, my:0 }}>
                       <>
                         <SvgIcon style={{ 
-                          color:headerColor, 
+                          color:isDark ? theme.palette.success.dark : theme.palette.success.light, 
                           width:30, height:30, paddingTop:0, paddingBottom:0, marginTop:0, marginBottom:0}}>
                           <Bell />
                         </SvgIcon>
@@ -93,7 +94,7 @@ const Navbar: FC = (): ReactElement => {
                     <Box sx={{ display:"flex", justifyContent:'flex-end', gap: 1, py:0, my:0 }}>
                       <>
                         <Typography mx='auto' my={0} py={0} 
-                        color={headerColor} 
+                        color={isDark ? theme.palette.success.dark : theme.palette.success.light} 
                         >Ali Sajadian</Typography>
                         <Avatar sx={{ width:35, height:35, m:0, p:0}}
                             src='https://avatars.githubusercontent.com/u/47317870?s=400&u=79da86747deb409779c3575c0da73d90ad65fe81&v=4'

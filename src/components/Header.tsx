@@ -1,5 +1,5 @@
 import { FC, ReactElement } from "react";
-import { Container, Grid } from "@mui/material";
+import { Container, Grid, useTheme } from "@mui/material";
 import { Box } from "@mui/system";
 import Navbar from "./Navbar";
 import { useTemplateThemeModeContext } from "../hooks";
@@ -8,14 +8,14 @@ import { TemplateThemeModeContextType } from "../context";
 
 export const Header: FC = (): ReactElement => {
   var mnuHeaderHeight = document.getElementById("sidebarMnuHeader")?.clientHeight
-  const { headerBgColor } = useTemplateThemeModeContext() as TemplateThemeModeContextType;
-
+  const theme = useTheme();
+  const { isDark } = useTemplateThemeModeContext() as TemplateThemeModeContextType;
   return (
     <Box
       sx={{
         width: "100%",
         height: mnuHeaderHeight,
-        backgroundColor: headerBgColor,
+        backgroundColor: isDark ? theme.palette.info.dark : theme.palette.info.light,
         boxShadow:15,
       }}
     >

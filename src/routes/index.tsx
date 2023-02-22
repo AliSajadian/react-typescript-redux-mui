@@ -5,7 +5,7 @@ import { IRoute } from "../types/RouteType";
 
 const Dashboard = async(() => import("../pages/dashboard/Dashboard"));
 const About = async(() => import("../pages/About"));
-const Config = async(() => import("../pages/config"));
+const Config = async(() => import("../pages/Config"));
 const Company = async(() => import("../pages/baseInfo/company"));
 const Department = async(() => import("../pages/baseInfo/department"));
 const Employee = async(() => import("../pages/baseInfo/employee"));

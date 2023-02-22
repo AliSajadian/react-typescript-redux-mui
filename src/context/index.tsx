@@ -1,4 +1,3 @@
-import { Theme } from '../styles/CommonStyle';
 import { 
     SidebarSelectedMenuTitleContext, 
     TemplateDirectionContext,
@@ -8,11 +7,6 @@ import { ContextProvider } from './contextProvider';
 
 export interface TemplateThemeModeContextType {
     isDark: boolean;
-    theme: Theme;
-    bgColor: string;
-    color: string;
-    headerBgColor: string;
-    headerColor: string;
     toggleThemeMode: () => void;
 }
 export { 

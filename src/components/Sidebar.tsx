@@ -23,7 +23,8 @@ import {
 } from "@mui/icons-material";
 import { 
   Box, 
-  Typography 
+  Typography, 
+  useTheme
 } from "@mui/material";
 import { SidebarFooter } from "./SidebarFooter";
 import { Badge } from "./Badge";
@@ -36,6 +37,7 @@ import { TemplateThemeModeContextType } from "../context";
 
 
 const SideBar: FC = (): ReactElement => {
+  const theme = useTheme();
   const navigate = useNavigate();
   const { collapsed } = useProSidebar();
   const { 
@@ -43,21 +45,21 @@ const SideBar: FC = (): ReactElement => {
     menuItemStyles,
   } = useSidebar();
   const { setMenuTitle } = useSidebarSelectedMenuTitleContext();
-  const { color, bgColor, headerColor, headerBgColor } = useTemplateThemeModeContext() as TemplateThemeModeContextType;
+  const { isDark } = useTemplateThemeModeContext() as TemplateThemeModeContextType;
 
   const menuItemMouseUpHandler = (mnuTitle: string) => {
     setMenuTitle(mnuTitle)
   }
-
   return(
       <Sidebar 
         rtl={false} 
         breakPoint="sm"
         transitionDuration={800} 
         style={{ height: "100vh" }}
-        backgroundColor={bgColor}
+        backgroundColor={isDark ? theme.palette.primary.dark : theme.palette.primary.light}
         rootStyles={{
-          color: color,
+          color: isDark ? theme.palette.secondary.dark : theme.palette.secondary.light
+          // color: color, isDark ? theme.palette.success.dark : theme.palette.success.light
         }}
       >
         <Menu >
@@ -65,11 +67,11 @@ const SideBar: FC = (): ReactElement => {
             id="sidebarMnuHeader"
             style={{ 
               textAlign: "center", 
-              height: 'auto', 
+              height: 68, 
               marginTop: 0,
-              backgroundColor: headerBgColor
+              backgroundColor: isDark ? theme.palette.info.dark : theme.palette.info.light
             }}
-            icon={<MenuOutlined sx={{color:headerColor}}/>}
+            icon={<MenuOutlined sx={{color: isDark ? theme.palette.success.dark : theme.palette.success.light}}/>}
             onClick={() => {
               toggle();
             }}
@@ -77,7 +79,7 @@ const SideBar: FC = (): ReactElement => {
             {" "}
             <Typography 
               sx={{textAlign:"center", fontWeight:"bold", my:"1rem", 
-              color:headerColor
+              color: isDark ? theme.palette.success.dark : theme.palette.success.light
             }} 
               variant="h5"
             >
