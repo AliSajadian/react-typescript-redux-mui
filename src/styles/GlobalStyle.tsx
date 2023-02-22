@@ -1,4 +1,5 @@
 import { createTheme } from "@mui/material/styles";
+import { blue, green, purple, } from "@mui/material/colors";
 
 export const theme = createTheme({
     components: {
@@ -34,25 +35,36 @@ export const theme = createTheme({
     },
     palette: {
       primary: {//bgcolor
-        main: "#0989e3",
+        main: blue[500],
+        600: blue[600],
+        700: blue[700],
+        800: blue[800],
+        900: blue[900],
+        A100: blue['A100'],
+        A200: blue['A200'],
         light: "#ffffff",
         dark: "#0b2948",
       },
       secondary: {//color
-        main: "#4db6ac",
+        main: purple[500],
         light: "#607489",
         dark: "#8ba1b7",
       },
       info: {//header bgcolor
-        main: "#4db6ac",
+        main: blue[100],
+        200: blue[200],
         light: "#051e3932",
         dark: "#031d35d5",
       },
       success: {//header color
-        main: "#4db6ac",
+        main: green[300],
         light: "#000f1f32",
         dark: "#8ba1b7",
-      }
+      },
+      common: {
+        black: '#000000',
+        white: '#ffffff',
+      },
     },
   });
 

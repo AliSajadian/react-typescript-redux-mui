@@ -6,7 +6,6 @@ import {
     styled, 
     Switch, 
     Typography, 
-    useTheme
 } from "@mui/material";
 import { 
   useTemplateDirectionContext, 

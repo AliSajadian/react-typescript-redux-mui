@@ -19,7 +19,7 @@ import {
   FoodBankOutlined, 
   SearchOutlined,
   RecommendOutlined,
-  SettingsApplications,
+  Settings,
 } from "@mui/icons-material";
 import { 
   Box, 
@@ -165,7 +165,7 @@ const SideBar: FC = (): ReactElement => {
               </MenuItem>
             </Menu>
             <MenuItem 
-              icon={<SettingsApplications/>}
+              icon={<Settings/>}
               onClick={() => navigate('/config', { replace: true })}
               onMouseUp={() => menuItemMouseUpHandler('Template Configuration')}
             >
