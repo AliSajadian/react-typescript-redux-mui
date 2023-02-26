@@ -1,5 +1,3 @@
-export type Theme = 'light' | 'dark';
-
 export const themes = {
   light: {
     sidebar: {
@@ -11,7 +9,8 @@ export const themes = {
       color: '#00203f32',
     },
     menu: {
-      menuContent: '#fbfcfd',
+      // '#fbfcfd'
+      menuContent: '#e1e1e6',
       icon: '#0098e5',
       hover: {
         backgroundColor: '#c5e4ff',

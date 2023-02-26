@@ -5,17 +5,17 @@ import FavoriteMeal from "./FavoriteMeal";
 
 const FavoriteMeals: FC = (): ReactElement => {
     return(
-        <Card sx={{height:200}}>
+        <Card sx={{height:200, color:'text.secondary'}}>
             <Box 
                 display='flex' 
                 justifyContent='space-between' 
                 height='20%'
                 pt={1} 
-                sx={{backgroundColor:'whitesmoke'}}
+                // sx={{backgroundColor:'whitesmoke'}}
             >
                 <Typography 
                     variant="subtitle1" 
-                    ml={2}
+                    m={2}
                     sx={{fontSize:{xs:'8pt', sm:'8pt', md:'9pt', lg:'10pt', fontWeight:'bold'}}}
                 >
                     Favorite Meals
@@ -23,7 +23,7 @@ const FavoriteMeals: FC = (): ReactElement => {
                 <Typography 
                     variant="subtitle2" 
                     color='lightblue' 
-                    mr={2}
+                    m={2}
                     sx={{
                         textDecoration:'underline', 
                         cursor: 'pointer', 
@@ -38,7 +38,8 @@ const FavoriteMeals: FC = (): ReactElement => {
                     height:'80%', 
                     m:'auto', 
                     p:'auto', 
-                    backgroundColor:'whitesmoke'}} 
+                    // backgroundColor:'whitesmoke'
+                }} 
             >
                 <FavoriteMeal mealName={'meal3'} orderNo={1864}/>
                 <FavoriteMeal mealName={'meal4'} orderNo={2265}/>

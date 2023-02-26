@@ -19,7 +19,6 @@ import {
   FoodBankOutlined, 
   SearchOutlined,
   RecommendOutlined,
-  Settings,
 } from "@mui/icons-material";
 import { 
   Box, 
@@ -31,9 +30,8 @@ import { Badge } from "./Badge";
 import { 
   useSidebar, 
   useSidebarSelectedMenuTitleContext,
-  useTemplateThemeModeContext, 
+  useTemplateDirectionContext,
 } from "../hooks";
-import { TemplateThemeModeContextType } from "../context";
 
 
 const SideBar: FC = (): ReactElement => {
@@ -42,10 +40,10 @@ const SideBar: FC = (): ReactElement => {
   const { collapsed } = useProSidebar();
   const { 
     toggle,
-    menuItemStyles,
+    menuItemStyles
   } = useSidebar();
   const { setMenuTitle } = useSidebarSelectedMenuTitleContext();
-  const { isDark } = useTemplateThemeModeContext() as TemplateThemeModeContextType;
+  const { rtl } = useTemplateDirectionContext()
 
   const menuItemMouseUpHandler = (mnuTitle: string) => {
     setMenuTitle(mnuTitle)
@@ -56,30 +54,31 @@ const SideBar: FC = (): ReactElement => {
         breakPoint="sm"
         transitionDuration={800} 
         style={{ height: "100vh" }}
-        backgroundColor={isDark ? theme.palette.primary.dark : theme.palette.primary.light}
+        backgroundColor={theme.palette.background.paper}
+        dir={rtl ? 'rtl' : 'ltr'}
         rootStyles={{
-          color: isDark ? theme.palette.secondary.dark : theme.palette.secondary.light
-          // color: color, isDark ? theme.palette.success.dark : theme.palette.success.light
+          color: 'inherit'
         }}
       >
-        <Menu >
+        <Menu>
           <MenuItem 
             id="sidebarMnuHeader"
             style={{ 
               textAlign: "center", 
               height: 68, 
               marginTop: 0,
-              backgroundColor: isDark ? theme.palette.info.dark : theme.palette.info.light
+              boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.4)',
             }}
-            icon={<MenuOutlined sx={{color: isDark ? theme.palette.success.dark : theme.palette.success.light}}/>}
+            icon={<MenuOutlined 
+                    sx={{color: 'inherit'}}
+                  />}
             onClick={() => {
               toggle();
             }}
           >
             {" "}
             <Typography 
-              sx={{textAlign:"center", fontWeight:"bold", my:"1rem", 
-              color: isDark ? theme.palette.success.dark : theme.palette.success.light
+              sx={{textAlign:"center", fontWeight:"bold", my:"1rem", color: 'inherit'
             }} 
               variant="h5"
             >
@@ -87,7 +86,6 @@ const SideBar: FC = (): ReactElement => {
             </Typography>
           </MenuItem>
         </Menu>
-            {/* <div style={{ flex: 1, marginBottom: '32px' }}> style={{ marginBottom: '24px', marginTop: '16px' }}*/}
             <Box sx={{ p: '0 24px', mb: '8px', mt: '8px' }}>
               <Typography
                 variant="body2"
@@ -97,8 +95,7 @@ const SideBar: FC = (): ReactElement => {
                 General
               </Typography>
             </Box>
-        {/* component="Link" href="/" */}
-        <Menu menuItemStyles={menuItemStyles}>
+        <Menu  menuItemStyles={menuItemStyles}>
           <MenuItem 
             icon={<HomeOutlined />} 
             onClick={() => (navigate('/', { replace: true }))} 
@@ -164,13 +161,6 @@ const SideBar: FC = (): ReactElement => {
                 Examples
               </MenuItem>
             </Menu>
-            <MenuItem 
-              icon={<Settings/>}
-              onClick={() => navigate('/config', { replace: true })}
-              onMouseUp={() => menuItemMouseUpHandler('Template Configuration')}
-            >
-              Template Config
-            </MenuItem>
         </Menu>
         <SidebarFooter collapsed={collapsed}/>
       </Sidebar>

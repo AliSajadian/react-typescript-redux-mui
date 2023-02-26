@@ -1,5 +1,5 @@
 import { FC, ReactElement, ReactNode } from "react";
-import { Box, CssBaseline } from "@mui/material";
+import { Box } from "@mui/material";
 import Footer from "../components/Footer";
 import Main from "../components/Main";
 import SideBar from "../components/Sidebar";
@@ -22,17 +22,17 @@ const Layout: FC<LayoutProps> = ({ children }): ReactElement => {
           maxHeight: "100vh",
           maxWidth: "100vw",
           flexGrow: 1,
+          color: 'text.secondary'
       }}
     >
-      <CssBaseline />
-        <SideBar />
-        <Main >
-          <Header />
-          <Content>
-            {children}
-          </Content>
-          <Footer />
-        </Main>
+      <SideBar />
+      <Main >
+        <Header />
+        <Content>
+          {children}
+        </Content>
+        <Footer />
+      </Main>
     </Box>
   );
 };

@@ -14,24 +14,27 @@ export const Content: FC<ContentProps> = ({ children }): ReactElement => {
     + ')'
   return (
     <Box
-        sx={{
-            minHeight: height,
-            maxWidth: "100vw",
-            flexGrow: 1,
-            backgroundColor: '#dcecfc'
-        }}
+      sx={{
+          minHeight: height,
+          maxWidth: "100vw",
+          mb:2,
+          flexGrow: 1,
+          backgroundColor: 'inherit'
+          // '#dcecfc'
+      }}
     >
       <Card
         sx={{
           display:'flex',
           justifyContent:'center',
-          my:'0',
+          mt:2,
           mx:'auto', 
           height:'100%', 
-          width:{xs:'100%', sm:'90%', md:'80%', lg:'80%', xl:'80%'}, 
-          boxShadow:15,
+          width:{xs:'95%', sm:'90%', md:'85%', lg:'85%', xl:'80%'}, 
+          boxShadow:3,
           // "10px 10px 10px #b6d4f9",
-          backgroundColor:'#e8f1fc',
+          backgroundColor:'inherit'
+          // '#e8f1fc',
         }}
       >
         {children}

@@ -1,17 +1,17 @@
 import { 
     SidebarSelectedMenuTitleContext, 
     TemplateDirectionContext,
-    TemplateThemeModeContext,
+    ColorModeContext,
  } from './context';
 import { ContextProvider } from './contextProvider';
 
-export interface TemplateThemeModeContextType {
-    isDark: boolean;
-    toggleThemeMode: () => void;
+export interface ColorModeContextType {
+    colorMode: 'light' | 'dark';
+    toggleColorMode: () => void;
 }
 export { 
     SidebarSelectedMenuTitleContext, 
     TemplateDirectionContext, 
-    TemplateThemeModeContext, 
+    ColorModeContext, 
     ContextProvider 
 }

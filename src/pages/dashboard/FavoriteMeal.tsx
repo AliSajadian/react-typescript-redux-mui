@@ -14,9 +14,6 @@ const FavoriteMeal: FC<MealOrderStatisticProps> = ({ mealName, orderNo }): React
             display='flex' 
             justifyContent='space-between' 
             mx={2}
-            // border={0} 
-            // borderBottom={1} 
-            // borderColor='text.disabled'
         >
             <Typography 
                 variant="body2" 

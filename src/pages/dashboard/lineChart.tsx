@@ -1,13 +1,14 @@
 import { FC, ReactElement, useState } from "react";
+import { Box, Typography, useTheme } from "@mui/material";
 import { Line } from "react-chartjs-2";
-import { CategoryScale, LinearScale, PointElement, LineElement, Chart } from "chart.js";
-import { Box, Typography } from "@mui/material";
+import { CategoryScale, LinearScale, PointElement, LineElement, Filler, Chart } from "chart.js";
 
 
 Chart.register(CategoryScale);
 Chart.register(LinearScale);
 Chart.register(PointElement);
 Chart.register(LineElement);
+Chart.register(Filler);
 
 
 interface IDataset {
@@ -43,15 +44,16 @@ interface IOptions {
 }
   
 const LineChart: FC = (): ReactElement => {
+  const theme = useTheme();
   const dat1:IData = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September'],
     datasets: [
       {
         label: 'Rainfall',
-        fill: false,
+        fill: true,
         lineTension: 0.5,
-        backgroundColor: 'rgba(75,162,192,1)',
-        borderColor: 'rgba(0,0,0,1)',
+        backgroundColor: 'text.secondary',
+        borderColor: theme.palette.mode === 'dark'? 'whitesmoke' : 'text.primary',
         borderWidth: 2,
         data: [65, 59, 80, 81, 69, 74, 88, 71, 90]
       }
@@ -76,7 +78,7 @@ const LineChart: FC = (): ReactElement => {
   const [options] = useState<IOptions>(opt1);
   return (
     <Box 
-      sx={{display:'flex', flexDirection:'column'}} 
+      sx={{display:'flex', flexDirection:'column', backgroundColor:'default'}} 
       flexGrow={1} 
       px={1}
     >

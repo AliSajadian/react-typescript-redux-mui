@@ -6,18 +6,16 @@ import RadioGroup from "@mui/material/RadioGroup";
 
 const Suggestions: FC = (): ReactElement => {
     return(
-        <Card sx={{height:200, backgroundColor:'whitesmoke'}}>
+        <Card sx={{height:200, color:'text.secondary'}}>
             <Box 
                 display='flex' 
                 justifyContent='space-between' 
                 height='20%'
                 py={1} 
-                // pb={3}
-                sx={{backgroundColor:'whitesmoke'}}
             >
                 <Typography 
                     variant="subtitle1" 
-                    ml={2}
+                    m={2}
                     sx={{fontSize:{xs:'8pt', sm:'8pt', md:'9pt', lg:'10pt', fontWeight:'bold'}}}
                 >
                     Suggested Meal
@@ -25,7 +23,7 @@ const Suggestions: FC = (): ReactElement => {
                 <Typography 
                     variant="subtitle2" 
                     color='lightblue' 
-                    mr={2}
+                    m={2}
                     sx={{
                         textDecoration:'underline', 
                         cursor: 'pointer', 
@@ -43,10 +41,9 @@ const Suggestions: FC = (): ReactElement => {
                     mx:'auto', 
                     py:'auto', 
                     px:4,
-                    backgroundColor:'whitesmoke'
                 }} 
             >
-                <Suggestion label='Great' mailNo={100} color='secondary'/>
+                <Suggestion label='Good' mailNo={100} color='secondary'/>
                 <Suggestion label='Qualified' mailNo={1000} color='success'/>
                 <Suggestion label='Not Qualified' mailNo={100} color='secondary'/>
             </RadioGroup>

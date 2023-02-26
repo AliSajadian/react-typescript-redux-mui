@@ -15,10 +15,10 @@ const MealOrderStatistic: FC<MealOrderStatisticProps> = ({ mealName, orderNo }):
             my={0.5} 
             p='auto' 
             border={1}
-            borderColor='text.disabled'
+            // borderColor='text.disabled'
         >
             <Typography 
-                color='text.disabled' 
+                // color='text.disabled' 
                 variant="body1" 
                 sx={{fontSize:{xs:'8pt', sm:'8pt', md:'9pt', lg:'10pt', fontWeight:'bold'}}}
             >

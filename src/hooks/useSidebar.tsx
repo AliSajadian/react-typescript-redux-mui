@@ -1,17 +1,14 @@
 import React from "react";
 import { useProSidebar } from "react-pro-sidebar";
 import { MenuItemStyles } from "../types/SidebarTypes";
-import { Theme, themes } from "../styles/CommonStyle";
+import { themes } from "../styles/CommonStyle";
+import { useColorModeContext } from "./useColorModeContext";
+import { ColorModeContextType } from "../context";
 
 export const useSidebar = () => {
   const { collapseSidebar, toggleSidebar, collapsed, toggled, broken } = useProSidebar();
-  const [theme, setTheme] = React.useState<Theme>('dark');
+  const { colorMode } = useColorModeContext() as ColorModeContextType;
   const [hasImage] = React.useState<boolean>(false);
-
-  // // handle on theme change event
-  // const handleThemeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   setTheme(e.target.checked ? 'dark' : 'light');
-  // };
 
   // // handle on image change event
   // const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,9 +32,9 @@ export const useSidebar = () => {
       fontWeight: 400,
     },
     icon: {
-      color: themes[theme].menu.icon,
+      color: themes[colorMode].menu.icon,
       [`&.${'ps-disabled'}`]: {
-        color: themes[theme].menu.disabled.color,
+        color: themes[colorMode].menu.disabled.color,
       },
     },
     SubMenuExpandIcon: {
@@ -46,16 +43,16 @@ export const useSidebar = () => {
     subMenuContent: ({ level }) => ({
       backgroundColor:
         level === 0
-          ? hexToRgba(themes[theme].menu.menuContent, hasImage && !collapsed ? 0.4 : 1)
+          ? hexToRgba(themes[colorMode].menu.menuContent, hasImage && !collapsed ? 0.4 : 1)
           : 'transparent',
     }),
     button: {
       [`&.${'ps-disabled'}`]: {
-        color: themes[theme].menu.disabled.color,
+        color: themes[colorMode].menu.disabled.color,
       },
       '&:hover': {
-        backgroundColor: hexToRgba(themes[theme].menu.hover.backgroundColor, hasImage ? 0.8 : 1),
-        color: themes[theme].menu.hover.color,
+        backgroundColor: hexToRgba(themes[colorMode].menu.hover.backgroundColor, hasImage ? 0.8 : 1),
+        color: themes[colorMode].menu.hover.color,
       },
     },
     label: ({ open }) => ({
