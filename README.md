@@ -10,7 +10,14 @@
 - react-chartjs-2: 5.2.0
 - react-pro-sidebar: 1.0.0
 
-![ProTemplate](https://user-images.githubusercontent.com/47317870/219984027-c5915ed8-ebb4-4d1a-a8a0-dfebb1521c50.png)
+### ltr, light
+![react-typescript-redux-mui-responsive-ltr-light](https://user-images.githubusercontent.com/47317870/221400291-7f7dbffc-4d0b-486b-a502-b6ac52c16ded.png)
+### ltr, dark
+![react-typescript-redux-mui-responsive-ltr-dark](https://user-images.githubusercontent.com/47317870/221400310-dad39613-a14e-41f4-86e4-81e6836a6bc4.png)
+### rtl, light
+![react-typescript-redux-mui-responsive-rtl-light](https://user-images.githubusercontent.com/47317870/221400322-8d192aca-7bc3-4c20-8499-772e56c1d8f0.png)
+### rtl, dark
+![react-typescript-redux-mui-responsive-rtl-dark](https://user-images.githubusercontent.com/47317870/221400325-b9fecd8b-1447-4759-a891-974b09c6a208.png)
 
 ### Installation:
 ### `npm install -global react-create-app`

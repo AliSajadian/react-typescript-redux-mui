@@ -2,7 +2,6 @@ import { Dispatch } from 'redux';
 import { ICompany as Company } from '../../models/company';
 import { AxiosResponse } from 'axios';
 import axios from '../../services/axios';
-import history from '../../history';
 import { ThunkResult } from './actionResultTypes';
 import { 
     Action,
@@ -30,7 +29,7 @@ export const getCompanies = (): ThunkResult<void> => async (dispatch: Dispatch<A
         type: ActionType.FETCH_COMPANIES 
     });
     try {
-        const response: AxiosResponse<Company[]> = await axios.get(`https://jsonplaceholder.typicode.com/comments`);
+        const response: AxiosResponse<Company[]> = await axios.get(`/companies`);
         dispatch<IFetchCompaniesSuccess>({
             type: ActionType.FETCH_COMPANIES_SUCCESS,
             payload: response.data  
@@ -48,7 +47,7 @@ export const getCompany = (id: number): ThunkResult<void> => async (dispatch: Di
     });
 
     try {
-        const response: AxiosResponse<Company> = await axios.get(`https://jsonplaceholder.typicode.com/comments/${id}`);
+        const response: AxiosResponse<Company> = await axios.get(`/companies/${id}`);
         dispatch<IFetchCompanySuccess>({
             type: ActionType.FETCH_COMPANY_SUCCESS,
             payload: response.data  
@@ -94,7 +93,7 @@ export const editCompany = (editedCompany: Company): ThunkResult<void> => async 
         });
     }
 };
-export const deleteCompany = (deletedId: number): ThunkResult<void> => async (dispatch: Dispatch<Action>) => { 
+export const deleteCompany = (deletedId: number, history: any): ThunkResult<void> => async (dispatch: Dispatch<Action>) => { 
     dispatch<IDeleteCompany>({ type: ActionType.DELETE_COMPANY });
     try {
         const response: AxiosResponse<number> = await axios.delete(`/companies/${deletedId}`);

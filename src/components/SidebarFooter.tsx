@@ -48,7 +48,7 @@ const StyledCollapsedSidebarFooter = styled.a`
 `;
 
 const codeUrl =
-  'https://github.com/AliSajadian/react-typescript-redux-mui/blob/master/src/components/Sidebar.tsx';
+  'https://github.com/AliSajadian/react-typescript-redux-mui/blob/master/src';
 
 export const SidebarFooter: React.FC<SidebarFooterProps> = ({ children, collapsed, ...rest }) => {
   return (

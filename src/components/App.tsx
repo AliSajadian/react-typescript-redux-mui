@@ -5,11 +5,11 @@ import {
   ThemeProvider as MuiThemeProvider,
 } from "@mui/material/styles";
 // import ReduxToastr from 'react-redux-toastr';
-import { theme as globalTheme } from "./styles/GlobalStyle";
+import { theme as globalTheme } from "../styles/GlobalStyle";
 import React from "react";
-import AppRoutes from "./routes/routes";
-import { useColorModeContext } from "./hooks";
-import { ColorModeContextType } from "./context";
+import AppRoutes from "../routes/routes";
+import { useColorModeContext } from "../hooks";
+import { ColorModeContextType } from "../context";
 import { grey } from "@mui/material/colors";
 
 const getDesignTokens = (colorMode: PaletteMode) => ({
