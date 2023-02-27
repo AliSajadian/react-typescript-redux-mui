@@ -35,7 +35,7 @@
    - ##### `npm install @mui/material @mui/icons-material @mui/styled-engine-sc styled-components`
    
 **Install redux packages installation:**
-##### `npm install redux react-redux redux redux-thunk @types/redux @types/react-redux @types/redux @types/redux-thunk`
+##### `npm install redux react-redux redux-thunk @types/redux @types/react-redux @types/redux-thunk`
 
 **Install react-pro-sidebar packages installation:**
 ##### `npm install react-pro-sidebar`

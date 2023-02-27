@@ -1,16 +1,5 @@
 import { ReactElement, FC } from "react";
-import { 
-  Box, 
-  Paper, 
-  styled, 
-  Table, 
-  TableBody, 
-  TableCell, 
-  tableCellClasses, 
-  TableContainer, 
-  TableHead, 
-  TableRow, 
-} from "@mui/material";
+import { Box } from "@mui/material";
 import GenericDataTable from "../../components/GenericDataTable";
 // import { useSelector } from "react-redux";
 
@@ -18,27 +7,6 @@ import GenericDataTable from "../../components/GenericDataTable";
 // import { ICompany } from '../../models/company';
 // import { ICompaniesState } from "../../redux/reducers/companyReducer";
 
-
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-  [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
-    color: 'whitesmoke',
-  },
-  [`&.${tableCellClasses.body}`]: {
-    fontSize: 13,
-    color: 'inherit',
-  },
-}));
-
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  '&:nth-of-type(odd)': {
-    backgroundColor: theme.palette.action.hover,
-  },
-  // hide last border
-  '&:last-child td, &:last-child th': {
-    border: 0,
-  },
-}));
 
 function createData(
   id: number,
@@ -78,7 +46,7 @@ const Company: FC = (): ReactElement => {
       <GenericDataTable
         headers={{
           id: "Id",
-          name: "Name",
+          name: "Company Name",
         }}
         items={dataItems}
       />

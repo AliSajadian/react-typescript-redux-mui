@@ -79,13 +79,14 @@ import {
   const GenericDataTable = <T extends MinTableItem>(props: TableProps<T>) => {
     function renderRow(item: T): React.ReactNode {
       return (
-        <StyledTableRow>
-          {objectKeys(item).map((itemProperty) => {
+        <StyledTableRow key={item.id.toString()}>
+          {objectKeys(item).map((itemProperty, indx) => {
             const customRenderer = props.customRenderers?.[itemProperty];
-  
+            console.log(customRenderer)
+
             if (customRenderer) {
               return(
-                <StyledTableCell align="center" component="th" scope="row">
+                <StyledTableCell key={indx} align="center" component="th" scope="row">
                   {customRenderer(item)}
                 </StyledTableCell>
               );
@@ -95,7 +96,7 @@ import {
              item[itemProperty] : 
              ""
             return (
-              <StyledTableCell align="center" component="th" scope="row">
+              <StyledTableCell key={indx} align="center" component="th" scope="row">
                 {value}
               </StyledTableCell>
             );
@@ -108,9 +109,9 @@ import {
         <TableContainer component={Paper} sx={{width:'80%'}}>
             <Table sx={{ minWidth: 500 }} aria-label="customized table">
                 <TableHead>
-                    <TableRow>
-                        {objectValues(props.headers).map((headerValue) => (
-                            <StyledTableCell align="center">{headerValue}</StyledTableCell>
+                    <TableRow key={0}> 
+                        {objectValues(props.headers).map((headerValue, index) => (
+                            <StyledTableCell key={index} align="center">{headerValue}</StyledTableCell>
                         ))}
                     </TableRow>
                 </TableHead>

@@ -1,5 +1,5 @@
 import { ReactElement, FC } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import GenericDataTable from "../../components/GenericDataTable";
 
 function createData(
@@ -32,7 +32,7 @@ const Department: FC = (): ReactElement => {
       <GenericDataTable
         headers={{
           id: "Id",
-          name: "Name",
+          name: "Department",
         }}
         items={dataItems}
       />
