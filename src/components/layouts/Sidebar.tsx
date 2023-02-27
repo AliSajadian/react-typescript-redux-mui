@@ -26,15 +26,15 @@ import {
   useTheme
 } from "@mui/material";
 import { SidebarFooter } from "./SidebarFooter";
-import { Badge } from "./Badge";
+import { Badge } from "../utilities/Badge";
 import { 
   useSidebar, 
   useSidebarSelectedMenuTitleContext,
   useTemplateDirectionContext,
-} from "../hooks";
+} from "../../hooks";
 
 
-const SideBar: FC = (): ReactElement => {
+export const SideBar: FC = (): ReactElement => {
   const theme = useTheme();
   const navigate = useNavigate();
   const { collapsed } = useProSidebar();
@@ -166,5 +166,3 @@ const SideBar: FC = (): ReactElement => {
       </Sidebar>
   )
 }
-
-export default SideBar;

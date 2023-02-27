@@ -1,7 +1,7 @@
 import { Backdrop, Box, Button, CircularProgress } from "@mui/material";
 import React, { FC, ReactElement } from "react";
 
-const Loader: FC = (): ReactElement => {
+export const Loader: FC = (): ReactElement => {
     const [open, setOpen] = React.useState(false);
     const handleClose = () => {
       setOpen(false);
@@ -22,4 +22,3 @@ const Loader: FC = (): ReactElement => {
   </Box>)
 };
 
-export default Loader;

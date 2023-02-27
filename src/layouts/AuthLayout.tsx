@@ -6,7 +6,7 @@ import { SignIn1 } from '../assets';
 type AuthLayoutProps = {
   children: ReactNode;
 }
-const AuthLayout: FC<AuthLayoutProps> = ({ children }) => {
+export const AuthLayout: FC<AuthLayoutProps> = ({ children }) => {
   return (
     <Grid 
       container 
@@ -23,4 +23,3 @@ const AuthLayout: FC<AuthLayoutProps> = ({ children }) => {
   )
 };
 
-export default AuthLayout;

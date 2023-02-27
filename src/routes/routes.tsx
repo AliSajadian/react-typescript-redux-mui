@@ -5,8 +5,7 @@ import { Outlet } from 'react-router-dom';
 
 import { IRoute } from "../types/RouteType";
 import { routes as dashboardRoutes, authRoutes } from "./index";
-import MainLayout from "../layouts/MainLayout";
-import AuthLayout from "../layouts/AuthLayout";
+import { MainLayout, AuthLayout } from "../layouts";
 import { RootState } from '../redux/store/store';
 
 

@@ -1,6 +1,6 @@
 // AsyncComponent.tsx
 import React from "react";
-import Loader from './Loader';
+import { Loader } from '..';
 
 
 interface AsyncComponentState {
@@ -43,4 +43,4 @@ const asyncComponent: IAsyncComponent = (importComponent) => {
   return AsyncFunc;
 }
 
-export default asyncComponent;
+export default asyncComponent

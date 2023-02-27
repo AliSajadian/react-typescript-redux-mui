@@ -1,6 +1,6 @@
 import { ReactElement, FC } from "react";
 import { Box } from "@mui/material";
-import GenericDataTable from "../../../components/GenericDataTable";
+import {GenericDataTable} from "../../../components";
 
 const dataItems = [
   {

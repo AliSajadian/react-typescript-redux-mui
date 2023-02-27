@@ -1,9 +1,4 @@
-declare module "*.jpg" {
-    const path: string;
-    export default path;
-}
+import { IMenuItemStyles } from './SidebarTypes'
+import { IRoute } from './RouteType'
 
-declare module "*.png" {
-    const path: string;
-    export default path;
-}
+export { IRoute, IMenuItemStyles }

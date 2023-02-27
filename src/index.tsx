@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom"
 import { Provider } from 'react-redux';
 import { ProSidebarProvider } from "react-pro-sidebar";
 import reportWebVitals from './reportWebVitals';
-import App from './components/App';
+import { App } from './components';
 import { store } from './redux/store/store'
 import { ContextProvider } from './context';
 

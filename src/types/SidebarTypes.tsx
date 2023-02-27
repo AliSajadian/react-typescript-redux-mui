@@ -1,7 +1,7 @@
 import { CSSObject } from '@emotion/styled';
 
 
-export interface MenuItemStylesParams {
+interface IMenuItemStylesParams {
     level: number;
     disabled: boolean;
     active: boolean;
@@ -9,15 +9,15 @@ export interface MenuItemStylesParams {
     open?: boolean;
   }
 
-export type ElementStyles = CSSObject | ((params: MenuItemStylesParams) => CSSObject | undefined);
+type ElementStylesType = CSSObject | ((params: IMenuItemStylesParams) => CSSObject | undefined);
   
-export interface MenuItemStyles {
-    root?: ElementStyles;
-    button?: ElementStyles;
-    label?: ElementStyles;
-    prefix?: ElementStyles;
-    suffix?: ElementStyles;
-    icon?: ElementStyles;
-    subMenuContent?: ElementStyles;
-    SubMenuExpandIcon?: ElementStyles;
+export interface IMenuItemStyles {
+    root?: ElementStylesType;
+    button?: ElementStylesType;
+    label?: ElementStylesType;
+    prefix?: ElementStylesType;
+    suffix?: ElementStylesType;
+    icon?: ElementStylesType;
+    subMenuContent?: ElementStylesType;
+    SubMenuExpandIcon?: ElementStylesType;
   }

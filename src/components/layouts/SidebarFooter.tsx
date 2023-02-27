@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import { Github } from '../assets';
+import { Github } from '../../assets';
 import { Box, Typography } from '@mui/material';
-import packageJson from '../../package.json';
+import packageJson from '../../../package.json';
 
 interface SidebarFooterProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;

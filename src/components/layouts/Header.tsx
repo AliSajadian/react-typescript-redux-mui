@@ -1,7 +1,7 @@
 import { FC, ReactElement } from "react";
 import { Container, Grid, useTheme } from "@mui/material";
 import { Box } from "@mui/system";
-import Navbar from "./Navbar";
+import { Navbar } from "./Navbar";
 
 
 export const Header: FC = (): ReactElement => {

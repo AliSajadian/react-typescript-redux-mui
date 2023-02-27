@@ -5,21 +5,21 @@ import { FC } from "react";
 //     CardContent, 
 //     Button,
 //  } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
-import { AlertModalToggler } from "../redux/actionCreators/alertActions";
-import { RootState } from '../redux/store/store';
-import { IAlertState as AlertState } from '../redux/reducers/AlertReducer';
+// import { useDispatch, useSelector } from "react-redux";
+// import { AlertModalToggler } from "../redux/actionCreators/alertActions";
+// import { RootState } from '../redux/store/store';
+// import { IAlertState as AlertState } from '../redux/reducers/AlertReducer';
 
 
-const AlertModal: FC = () => {
-    const alert: AlertState = useSelector(
-        (state: RootState) => state.alert
-      );
-    const dispatch = useDispatch();
-    const hideModal = () => {
-        console.log('hide model fired')
-        dispatch(AlertModalToggler())
-    }
+export const Alert: FC = () => {
+    // const alert: AlertState = useSelector(
+    //     (state: RootState) => state.alert
+    //   );
+    // const dispatch = useDispatch();
+    // const hideModal = () => {
+    //     console.log('hide model fired')
+    //     dispatch(AlertModalToggler())
+    // }
     return (
         // contentClassName
         // <Modal fade={true}  dialogClassName="alert-container" style={{direction:'rtl'}}
@@ -63,4 +63,4 @@ const AlertModal: FC = () => {
 //     };
 //   };
   
-export default AlertModal;
+// export default AlertModal;

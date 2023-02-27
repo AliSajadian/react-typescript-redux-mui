@@ -1,6 +1,9 @@
 import { ReactElement, FC } from "react";
 import { Box } from "@mui/material";
-import GenericDataTable from "../../components/GenericDataTable";
+import { GenericDataTable } from "../../components";
+// import AlertModal from "../../components";
+// import Sidebar from "../../components";
+
 // import { useSelector } from "react-redux";
 
 // import { RootState } from "../../redux/store/store";

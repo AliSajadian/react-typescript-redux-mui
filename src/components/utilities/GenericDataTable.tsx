@@ -76,7 +76,7 @@ import {
     customRenderers?: CustomRenderers<T>;
   }
   
-  const GenericDataTable = <T extends MinTableItem>(props: TableProps<T>) => {
+  export const GenericDataTable = <T extends MinTableItem>(props: TableProps<T>) => {
     function renderRow(item: T): React.ReactNode {
       return (
         <StyledTableRow key={item.id.toString()}>
@@ -123,4 +123,4 @@ import {
     );
   }
   
-  export default GenericDataTable;
+  // export default GenericDataTable;

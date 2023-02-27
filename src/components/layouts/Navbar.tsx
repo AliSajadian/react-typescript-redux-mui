@@ -12,22 +12,19 @@ import {
   Avatar,
 } from "@mui/material";
 import { Menu, Search, } from "@mui/icons-material";
-import { Bell } from "../assets";
+import { Bell } from "../../assets";
 import { useProSidebar } from "react-pro-sidebar";
 import { 
   useSidebar, 
   useSidebarSelectedMenuTitleContext,
-  useTemplateDirectionContext,
-} from "../hooks";
-import SettingsDrawer from "./ConfigDrawer";
+} from "../../hooks";
+import {ConfigDrawer} from "../utilities/ConfigDrawer";
 
 
-const Navbar: FC = (): ReactElement => {
+export const Navbar: FC = (): ReactElement => {
   const { broken } = useProSidebar();
   const { toggle } = useSidebar();
   const { menuTitle } = useSidebarSelectedMenuTitleContext();
-  const { rtl } = useTemplateDirectionContext()
-  const flexDirection: string = rtl ? "row-reverse" : "row"
 
   return (
       <Container maxWidth="xl">
@@ -124,14 +121,13 @@ const Navbar: FC = (): ReactElement => {
                 <MenuItem>Logout</MenuItem>
               </Select>
             </Box>
-            <SettingsDrawer />
+            <ConfigDrawer />
           </Box>
         </Toolbar>
       </Container>
   );
 };
 
-export default Navbar;
 
 
 

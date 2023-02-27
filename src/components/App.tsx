@@ -50,7 +50,7 @@ const getDesignTokens = (colorMode: PaletteMode) => ({
 });
 
 
-function App() {// 
+export const App = () => {
   const { colorMode } = useColorModeContext() as ColorModeContextType;
   const theme = React.useMemo(() =>createTheme(globalTheme, getDesignTokens(colorMode)), [colorMode]);
   return (
@@ -74,4 +74,3 @@ function App() {//
   );
 }
 
-export default App;

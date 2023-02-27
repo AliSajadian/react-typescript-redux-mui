@@ -1,5 +1,5 @@
 import { FC, useEffect } from "react";
-import { withRouter, usePrevious } from "../hooks/index";
+import { withRouter, usePrevious } from "../../hooks/index";
 
 
 type ScrollToTopProps = {

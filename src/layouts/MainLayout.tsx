@@ -1,17 +1,19 @@
 import { FC, ReactElement, ReactNode } from "react";
 import { Box } from "@mui/material";
-import Footer from "../components/Footer";
-import Main from "../components/Main";
-import SideBar from "../components/Sidebar";
-import Header from "../components/Header";
-import Content from "../components/Content";
+import {
+  Main,
+  SideBar, 
+  Header, 
+  Content,
+  Footer,
+} from "../components";
 import { useTemplateDirectionContext } from "../hooks";
 
 
 interface LayoutProps {
   children: ReactNode;
 }
-const Layout: FC<LayoutProps> = ({ children }): ReactElement => {
+export const MainLayout: FC<LayoutProps> = ({ children }): ReactElement => {
   const { rtl } = useTemplateDirectionContext()
   const flexDirection: string = rtl ? "row-reverse" : "row"
   return (
@@ -37,4 +39,3 @@ const Layout: FC<LayoutProps> = ({ children }): ReactElement => {
   );
 };
 
-export default Layout;

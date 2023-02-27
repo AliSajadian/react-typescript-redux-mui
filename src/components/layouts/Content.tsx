@@ -43,4 +43,3 @@ export const Content: FC<ContentProps> = ({ children }): ReactElement => {
   )
 }
 
-export default Content;

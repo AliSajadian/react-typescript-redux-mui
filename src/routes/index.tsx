@@ -1,5 +1,5 @@
 // import { Dashboard } from "@mui/icons-material";
-import async from "../components/Async";
+import async from "../components/utilities/Async";
 import { IRoute } from "../types/RouteType";
 
 

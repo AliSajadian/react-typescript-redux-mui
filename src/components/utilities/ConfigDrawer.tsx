@@ -24,8 +24,8 @@ import {
   SideBarTitle,
   TitleContainer,
 } from "./ConfigDrawer.Styles";
-import { useColorModeContext, useTemplateDirectionContext } from "../hooks";
-import { ColorModeContextType } from "../context";
+import { useColorModeContext, useTemplateDirectionContext } from "../../hooks";
+import { ColorModeContextType } from "../../context";
 
 const AntSwitch = styled(Switch)(({ theme }) => ({
   width: 28,
@@ -69,7 +69,7 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-const SettingsDrawer: React.FC = () => {
+export const ConfigDrawer: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const { colorMode, toggleColorMode } = useColorModeContext() as ColorModeContextType;
   const { rtl, setRtl } = useTemplateDirectionContext();
@@ -150,4 +150,3 @@ const SettingsDrawer: React.FC = () => {
   );
 };
 
-export default SettingsDrawer;

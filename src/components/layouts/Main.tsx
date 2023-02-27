@@ -1,6 +1,6 @@
 import { FC, ReactElement, ReactNode } from "react";
 import { Box } from "@mui/material";
-import { useTemplateDirectionContext } from "../hooks";
+import { useTemplateDirectionContext } from "../../hooks";
 
 interface MainProps {
     children: ReactNode;

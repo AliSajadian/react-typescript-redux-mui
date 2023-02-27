@@ -1,6 +1,6 @@
 import React from "react";
 import { useProSidebar } from "react-pro-sidebar";
-import { MenuItemStyles } from "../types/SidebarTypes";
+import { IMenuItemStyles } from "../types/SidebarTypes";
 import { themes } from "../styles/CommonStyle";
 import { useColorModeContext } from "./useTemplateThemeModeContext";
 import { ColorModeContextType } from "../context";
@@ -26,7 +26,7 @@ export const useSidebar = () => {
     }
   };
 
-  const menuItemStyles: MenuItemStyles = {
+  const menuItemStyles: IMenuItemStyles = {
     root: {
       fontSize: '13px',
       fontWeight: 400,
