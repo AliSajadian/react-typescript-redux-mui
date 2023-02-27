@@ -20,28 +20,28 @@
 ![react-typescript-redux-mui-responsive-rtl-dark](https://user-images.githubusercontent.com/47317870/221400325-b9fecd8b-1447-4759-a891-974b09c6a208.png)
 
 ### Installation:
-### `npm install -global react-create-app`
+##### `npm install -global react-create-app`
       
 **Create react typescript app:**
-### `npx react-create-app app-name --template typescript`
+##### `npx react-create-app app-name --template typescript`
 
-**Intall react-router-dom pakcages installation:**
-### `npm install react-router-dom @types/react-router-dom`
+**Install react-router-dom packages installation:**
+##### `npm install react-router-dom @types/react-router-dom`
 
-**Intall mui (Material UI) pakcages installation:**
+**Install mui (Material UI) packages installation:**
 1. Use emotion for styling:
-   - ### `npm install @mui/material @mui/icons-material @emotion/react @emotion/styled`
+   - ##### `npm install @mui/material @mui/icons-material @emotion/react @emotion/styled`
 2. Use styled component for styling:
-   - ### `npm install @mui/material @mui/icons-material @mui/styled-engine-sc styled-components`
+   - ##### `npm install @mui/material @mui/icons-material @mui/styled-engine-sc styled-components`
    
-**Intall redux pakcages installation:**
-### `npm install redux react-redux redux redux-thunk @types/redux @types/react-redux @types/redux @types/redux-thunk`
+**Install redux packages installation:**
+##### `npm install redux react-redux redux redux-thunk @types/redux @types/react-redux @types/redux @types/redux-thunk`
 
-**Intall react-pro-sidebar pakcage installation:**
-### `npm install react-pro-sidebar`
+**Install react-pro-sidebar packages installation:**
+##### `npm install react-pro-sidebar`
 
-**Intall react-chartjs2 pakcage installation:**
-### `npm install react-chartjs2`
+**Install react-chartjs2 packages installation:**
+##### `npm install react-chartjs2`
 
 :+1:
 

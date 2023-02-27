@@ -1,6 +1,7 @@
 import { Dispatch } from 'redux';
 import { AxiosResponse } from 'axios';
 import axios from '../../services/axios';
+import { toastr } from "react-redux-toastr";
 
 import { IAuth as Auth } from '../../models/auth';
 import { ThunkResult } from './actionResultTypes';
@@ -38,11 +39,14 @@ export const AuthStart = (username: string, password: string): ThunkResult<void>
             type: ActionType.AUTH_SUCCESS,
             payload: response.data
         });
+        toastr.error('Succeed', 'Succeed', { component: <strong>Succeed</strong> });
+
     } catch (err: any) {
         dispatch<IAuthFail>({
             type: ActionType.AUTH_FAIL,
             payload: err
         });    
+        toastr.error('Error', err.toString(), { component: <strong>Error</strong> });
     }
 };
 

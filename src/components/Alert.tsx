@@ -5,7 +5,6 @@ import { FC } from "react";
 //     CardContent, 
 //     Button,
 //  } from "@mui/material";
-// import { connect } from "react-redux";
 import { useDispatch, useSelector } from "react-redux";
 import { AlertModalToggler } from "../redux/actionCreators/alertActions";
 import { RootState } from '../redux/store/store';

@@ -1,8 +1,10 @@
 import { Dispatch } from 'redux';
-import { ICompany as Company } from '../../models/company';
 import { AxiosResponse } from 'axios';
 import axios from '../../services/axios';
+import { toastr } from "react-redux-toastr";
+
 import { ThunkResult } from './actionResultTypes';
+import { ICompany as Company } from '../../models/company';
 import { 
     Action,
     ActionType,
@@ -34,11 +36,13 @@ export const getCompanies = (): ThunkResult<void> => async (dispatch: Dispatch<A
             type: ActionType.FETCH_COMPANIES_SUCCESS,
             payload: response.data  
         });
+        toastr.error('Succeed', 'Succeed', { component: <strong>Succeed</strong> });
     } catch(err: any) {
         dispatch<IFetchCompaniesFail>({
             type: ActionType.FETCH_COMPANIES_FAIL,
             payload: err
         });
+        toastr.error('Error', err.toString(), { component: <strong>Error</strong> });
     }
 }
 export const getCompany = (id: number): ThunkResult<void> => async (dispatch: Dispatch<Action>) => { 

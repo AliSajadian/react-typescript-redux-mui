@@ -4,7 +4,7 @@ import {
   createTheme,
   ThemeProvider as MuiThemeProvider,
 } from "@mui/material/styles";
-// import ReduxToastr from 'react-redux-toastr';
+import ReduxToastr from 'react-redux-toastr';
 import { theme as globalTheme } from "../styles/GlobalStyle";
 import React from "react";
 import AppRoutes from "../routes/routes";
@@ -61,7 +61,7 @@ function App() {//
           <AppRoutes/>
         </EmotionThemeProvider>
       </MuiThemeProvider>
-      {/* <ReduxToastr
+      <ReduxToastr
         timeOut={5000}
         newestOnTop={true}
         position="top-right"
@@ -69,7 +69,7 @@ function App() {//
         transitionOut="fadeOut"
         progressBar
         closeOnToastrClick
-      /> */}
+      />
     </React.Fragment>
   );
 }
